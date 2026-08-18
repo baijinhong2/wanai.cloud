@@ -37,7 +37,7 @@ interface Props { mode: GenMode; onModeChange?: (m: GenMode) => void; showHeader
 
 // ── 主组件 ──────────────────────────────────────────────────────────────
 export default function AiVideoGenerator({ mode, onModeChange, showHeader = true, defaultModel = "minimax-h3" }: Props) {
-  const { requireAuth, refreshCredits } = useAuth();
+  const { requireAuth, refreshCredits, user } = useAuth();
   const { t } = useI18n();
   const [tab, setTab] = useState<GenMode>(mode);
   const [subMode, setSubMode] = useState<SubMode>("firstFrame");
@@ -73,6 +73,35 @@ export default function AiVideoGenerator({ mode, onModeChange, showHeader = true
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // 刷新后从后端恢复生成历史（成功/失败的任务），只加载一次
+  const historyLoadedRef = useRef(false);
+  useEffect(() => {
+    if (!user || historyLoadedRef.current) return;
+    historyLoadedRef.current = true;
+    authFetch("/api/history")
+      .then(async (r) => {
+        if (!r.ok) return;
+        const data = await r.json();
+        const restored: VideoResult[] = (data.tasks || [])
+          .filter((t: any) => t.status === "succeeded" || t.status === "failed")
+          .map((t: any): VideoResult => ({
+            id: `db-${t.id}`,
+            status: t.status === "succeeded" ? "success" : "error",
+            videoUrl: t.video_url || undefined,
+            error: t.error || undefined,
+            mode: (["text-to-video", "image-to-video", "reference-to-video"].includes(t.mode) ? t.mode : "text-to-video") as GenMode,
+            subMode: (t.sub_mode === "firstLastFrame" || t.sub_mode === "firstFrame" ? t.sub_mode : undefined) as SubMode | undefined,
+            resolution: t.resolution as Resolution,
+            duration: Number(t.duration) || 0,
+            ratio: t.ratio as Ratio,
+            prompt: t.prompt || "",
+            assets: [],
+          }));
+        if (restored.length > 0) setResults((prev) => [...restored, ...prev]);
+      })
+      .catch(() => {});
+  }, [user]);
 
   function changeTab(m: GenMode) { setTab(m); if (onModeChange) onModeChange(m); }
   function changeSubMode(s: SubMode) { setSubMode(s); if (onModeChange) onModeChange("image-to-video"); }
