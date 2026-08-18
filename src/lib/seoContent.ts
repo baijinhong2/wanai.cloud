@@ -1,0 +1,726 @@
+// SEO 落地页内容（按 SEO内容生成prompt-工具站.md 的结构生成，英文为主）
+export interface SeoStep { title: string; description: string; }
+export interface SeoFeature { title: string; description: string; photo: string; }
+export interface SeoAudience { title: string; description: string; photo: string; }
+export interface SeoAdvantage { title: string; description: string; photo: string; }
+export interface SeoReview { title: string; description: string; rating: string; name: string; profession: string; }
+export interface SeoFaq { title: string; description: string; }
+
+export interface SeoPageContent {
+  h1Title: string;
+  h1Subtitle: string;
+  whatIsTitle: string;
+  whatIsDescription: string;
+  howToUseTitle: string;
+  howToUseSteps: SeoStep[];
+  doWithTitle: string;
+  doWithDescription: string;
+  doWithItems: SeoFeature[];
+  whoIsForTitle: string;
+  whoIsForItems: SeoAudience[];
+  whyChooseTitle: string;
+  whyChooseItems: SeoAdvantage[];
+  reviewsTitle: string;
+  reviewCount: string;
+  reviewItems: SeoReview[];
+  faqTitle: string;
+  faqItems: SeoFaq[];
+}
+
+const IMG = {
+  pet: "/samples/sample-pet.jpg",
+  portrait: "/samples/sample-portrait.jpg",
+  scifi: "/samples/sample-scifi.jpg",
+  landscape: "/samples/sample-landscape.jpg",
+  food: "/samples/sample-food.jpg",
+  animation: "/samples/sample-animation.jpg",
+};
+
+export const SEO_CONTENT: Record<string, SeoPageContent> = {
+  home: {
+    h1Title: "Free AI Video Generator — Text, Image & Reference to Video",
+    h1Subtitle: "The best free AI video generator online. Turn text, images and reference media into cinematic videos — no sign up, no watermark, no restrictions.",
+    whatIsTitle: "What Is WanAI.cloud's AI Video Generator?",
+    whatIsDescription:
+      "An AI video generator turns written prompts, images and reference media into finished videos automatically. WanAI.cloud's free AI video generator supports text to video, image to video and reference to video. It is an online AI video generator that needs no sign up, leaves no watermark and works right in your browser.",
+    howToUseTitle: "How Do You Use WanAI.cloud's AI Video Generator?",
+    howToUseSteps: [
+      { title: "Step 1: Choose your mode", description: "Pick text to video, image to video or reference to video, then open the AI video generator right in your browser." },
+      { title: "Step 2: Add your input", description: "Type a prompt, upload an image, or add reference images, video and audio to guide this free AI video generator." },
+      { title: "Step 3: Generate and download", description: "Click Generate and the AI video generator creates your clip in seconds. Preview and download — free, no watermark, no sign up." },
+    ],
+    doWithTitle: "What Can You Create with WanAI.cloud's AI Video Generator?",
+    doWithDescription: "WanAI.cloud's free AI video generator covers text, image and reference workflows in one online tool.",
+    doWithItems: [
+      { title: "AI Video Generator from Text", description: "Turn a written prompt into a cinematic clip — a free AI video generator from text for scripts, ads and storyboards.", photo: IMG.scifi },
+      { title: "AI Video Generator from Image", description: "Animate a still photo into motion — a free AI video generator from image for products, portraits and landscapes.", photo: IMG.portrait },
+      { title: "AI Video Generator from Video", description: "Use reference video to copy camera moves and pacing, then apply them to new content.", photo: IMG.animation },
+      { title: "AI Video Generator with Audio", description: "Add reference audio to guide the sound — an AI video generator with sound for consistent tone and rhythm.", photo: IMG.pet },
+    ],
+    whoIsForTitle: "Who Is WanAI.cloud's AI Video Generator For?",
+    whoIsForItems: [
+      { title: "Content creators", description: "Creators use this online AI video generator to produce daily clips for social feeds without heavy editing or software.", photo: IMG.portrait },
+      { title: "Marketers and brands", description: "Marketers turn copy, photos and reference media into ads and product teasers with the best free AI video generator.", photo: IMG.food },
+      { title: "Filmmakers and designers", description: "Filmmakers and designers prototype scenes and motion, using a generative AI video generator to preview before production.", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "Why Choose WanAI.cloud's AI Video Generator?",
+    whyChooseItems: [
+      { title: "New-generation video quality", description: "A genuinely new AI video generator with coherent motion, rich detail and reliable results for creators and brands.", photo: IMG.scifi },
+      { title: "Free with no sign up", description: "Use this AI video generator free with no sign up and no watermark — a free unlimited AI video generator with no restrictions.", photo: IMG.landscape },
+      { title: "All-in-one browser tool", description: "One online AI video generator platform for text, image and reference to video, with 768P/2K output and 4–15s clips.", photo: IMG.animation },
+    ],
+    reviewsTitle: "What Do Users Say About WanAI.cloud's AI Video Generator?",
+    reviewCount: "From 1127 Reviews",
+    reviewItems: [
+      { title: "The best free AI video generator I've tried", description: "I typed a prompt and had a cinematic clip in under a minute. This free AI video generator online beats paid tools and leaves no watermark.", rating: "5", name: "Jason Miller", profession: "Video Editor" },
+      { title: "Perfect for daily social content", description: "I batch clips from text and images every morning. The AI video generator free, no sign up flow keeps my publishing schedule on track.", rating: "5", name: "Sofia Nguyen", profession: "Social Media Manager" },
+      { title: "Great for product teasers", description: "I describe a product scene and this free AI video generator from image turns it into a clean promo. No software, no watermark.", rating: "5", name: "Liam Carter", profession: "E-commerce Owner" },
+      { title: "Impressive cinematic output", description: "The AI video generator from text has real camera movement and mood. I preview shots before production and save hours.", rating: "4.9", name: "Aisha Patel", profession: "Film Director" },
+      { title: "Simple and beginner friendly", description: "I never made a video before. I wrote a prompt, picked a format, and this online AI video generator handled everything — free and no restrictions.", rating: "5", name: "Emma Wilson", profession: "Blogger" },
+      { title: "My go-to generative AI video generator", description: "WanAI.cloud is my first stop for turning ideas into moving scenes. Reliable, fast and free with no sign up.", rating: "5", name: "Marco Rossi", profession: "Creative Director" },
+    ],
+    faqTitle: "What Are the Frequently Asked Questions About WanAI.cloud's AI Video Generator?",
+    faqItems: [
+      { title: "Is this AI video generator free?", description: "Yes. WanAI.cloud is a free AI video generator online with no sign up and no watermark, so you can start generating right away." },
+      { title: "What can I generate with the AI video generator?", description: "You can generate from text, from images and from reference video or audio, all in one online AI video generator platform." },
+      { title: "Does it leave a watermark?", description: "No. WanAI.cloud is a free AI video generator without watermark, so your downloaded clips are clean and ready to publish." },
+      { title: "Do I need to sign up?", description: "No. You can try the AI video generator free with no sign up, right in your browser." },
+      { title: "What resolutions does it support?", description: "The AI video generator outputs 768P and 2K, with aspect ratios like 21:9, 16:9, 4:3, 1:1, 3:4 and 9:16." },
+      { title: "How long can the videos be?", description: "Clips can be generated from 4 to 15 seconds, ideal for short ads, social posts and teasers." },
+      { title: "Is this a generative AI video generator?", description: "Yes. WanAI.cloud is a generative AI video generator that turns text, images and reference media into cinematic video automatically." },
+      { title: "Is it really free with no restrictions?", description: "Yes, it is a free unlimited AI video generator with no restrictions on your first clips, so you can experiment freely." },
+      { title: "Can I use the videos commercially?", description: "Yes, AI video generator output can be used for commercial projects. Check your plan for any usage limits." },
+      { title: "What should I type in the prompt?", description: "Describe the subject, action, setting, camera angle and style. Detailed prompts help the AI video generator produce more accurate results." },
+    ],
+  },
+
+  "text-to-video": {
+    h1Title: "Free Text to Video AI Generator (No Watermark)",
+    h1Subtitle: "Turn text into video in seconds with the best text to video AI. WanAI.cloud is a free text to video generator that turns your prompt into cinematic AI video from text — no watermark and no editing skills required.",
+    whatIsTitle: "What Is a Text to Video AI Generator?",
+    whatIsDescription:
+      "A text to video AI generator turns written prompts into finished videos automatically. WanAI.cloud's free AI video generator from text reads your scene description, camera movement and style, then renders a coherent clip. It is the fastest way to create text to videos AI content — no cameras, actors or editing software required.",
+    howToUseTitle: "How to Use WanAI.cloud's Free Text to Video Generator",
+    howToUseSteps: [
+      { title: "Step 1: Write your prompt", description: "Describe the subject, action, setting, camera angle and style. The more detail you give, the more accurate your text to video AI result will be." },
+      { title: "Step 2: Choose resolution and duration", description: "Pick 768P or 2K, select an aspect ratio and set a length from 4 to 15 seconds for your AI video generator from text clip." },
+      { title: "Step 3: Generate and download", description: "Click Generate and the text to video AI renders your video. Preview the output and download it — free text to video, with no watermark." },
+    ],
+    doWithTitle: "What Can You Create with the Text to Video AI Generator?",
+    doWithDescription: "From short social clips to product teasers, this free text to video generator covers a wide range of AI video generator from text use cases.",
+    doWithItems: [
+      { title: "Social media short videos", description: "Generate vertical text to videos AI clips for TikTok, Reels and Shorts with auto-optimized aspect ratios and eye-catching motion.", photo: IMG.portrait },
+      { title: "Product teasers and ads", description: "Describe a product scene and the text to video AI generator turns it into a polished promo clip for e-commerce and landing pages.", photo: IMG.food },
+      { title: "Cinematic concept previews", description: "Preview scenes, moods and camera moves before a real shoot — a fast AI video generator from text for storyboarding ideas.", photo: IMG.scifi },
+      { title: "Lifestyle and nature visuals", description: "Create aesthetic nature, travel and lifestyle text to video scenes for backgrounds, ads and creative projects.", photo: IMG.landscape },
+    ],
+    whoIsForTitle: "Who Is WanAI.cloud's Text to Video AI For?",
+    whoIsForItems: [
+      { title: "Content creators", description: "Creators use this text to video AI generator free tool to publish daily text to videos AI clips without heavy editing, keeping feeds fresh.", photo: IMG.portrait },
+      { title: "Marketers and brands", description: "Marketers turn copy into video ads and product teasers, using text to video AI to test creative angles far faster than a full shoot.", photo: IMG.food },
+      { title: "Designers and storytellers", description: "Designers and storytellers prototype scenes and motion with the AI video generator from text, iterating before committing to production.", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "Why Choose WanAI.cloud as the Best Text to Video AI?",
+    whyChooseItems: [
+      { title: "Cinematic text to video quality", description: "A best text to video AI with coherent motion, rich detail and reliable results for every clip.", photo: IMG.scifi },
+      { title: "Truly free with no watermark", description: "Use this text to video AI free without watermark. Write a prompt and download a clean clip — no hidden fees or logos on your video.", photo: IMG.landscape },
+      { title: "Fast, browser-based workflow", description: "No installs or exports. Turn text to video in seconds, all in your browser, with 768P/2K output, multiple aspect ratios and 4–15s durations.", photo: IMG.animation },
+    ],
+    reviewsTitle: "What Users Say About WanAI.cloud's Text to Video AI",
+    reviewCount: "From 1127 Reviews",
+    reviewItems: [
+      { title: "The best text to video AI I've tried", description: "I typed one sentence and had a polished clip in under a minute. This free text to video generator beats paid tools and leaves no watermark.", rating: "5", name: "Jason Miller", profession: "Video Editor" },
+      { title: "Perfect for daily social content", description: "I batch-generate text to videos AI clips for clients every morning. The AI video generator from text keeps motion smooth and ratios ready to post.", rating: "5", name: "Sofia Nguyen", profession: "Social Media Manager" },
+      { title: "Great free product teasers", description: "I describe a product scene and get a clean promo clip with no watermark. The text to video AI generator replaced hours of manual motion graphics.", rating: "5", name: "Liam Carter", profession: "E-commerce Owner" },
+      { title: "Impressive cinematic output", description: "The text to video results have real camera movement and mood. I preview shots before production and it saves a ton of planning time.", rating: "4.9", name: "Aisha Patel", profession: "Film Director" },
+      { title: "Simple and beginner friendly", description: "I never made a video before. I wrote a prompt, picked a format, and this text to video AI generator free tool handled the rest.", rating: "5", name: "Emma Wilson", profession: "Blogger" },
+      { title: "My go-to AI video generator from text", description: "WanAI.cloud is my first stop for turning a written idea into a moving scene. Reliable, fast and genuinely free text to video.", rating: "5", name: "Marco Rossi", profession: "Creative Director" },
+    ],
+    faqTitle: "Frequently Asked Questions About Text to Video AI",
+    faqItems: [
+      { title: "Is this text to video AI free to use?", description: "Yes. WanAI.cloud offers a text to video generator free of charge — write a prompt, generate a clip and download it with no watermark and no credit card required." },
+      { title: "How does text to video AI work?", description: "The text to video AI reads your prompt, understands the scene, subject and motion, then renders a video that matches your description." },
+      { title: "Is the output really without watermark?", description: "Yes, this is a text to video AI free without watermark. Your downloaded clips are clean and ready to publish." },
+      { title: "What resolutions does the AI video generator from text support?", description: "WanAI.cloud supports 768P and 2K output for text to video, so you can choose the quality that fits your project." },
+      { title: "What aspect ratios can I use?", description: "You can generate text to video in 21:9, 16:9, 4:3, 1:1, 3:4 and 9:16 to match YouTube, TikTok and Instagram." },
+      { title: "How long can the generated videos be?", description: "Text to video clips can be generated from 4 to 15 seconds, ideal for short ads, social posts and teasers." },
+      { title: "Do I need video editing experience?", description: "No. This AI text to video generator is free to use and handles rendering automatically — just describe your idea and download the result." },
+      { title: "Can I use the videos commercially?", description: "Yes, text to video output can be used for commercial projects. Check your plan for any usage limits before publishing." },
+      { title: "What is the best text to video AI?", description: "WanAI.cloud is a best text to video AI with cinematic, high-quality generation results." },
+      { title: "What should I write in the prompt?", description: "Describe the subject, action, setting, camera angle and style. Detailed prompts help the AI video generator from text produce more accurate results." },
+    ],
+  },
+
+  "image-to-video": {
+    h1Title: "Free Image to Video AI Generator (No Watermark)",
+    h1Subtitle: "Turn photos into videos in seconds with the best image to video AI. WanAI.cloud's free image to video generator animates still images into smooth AI video from image — no watermark and no editing skills required.",
+    whatIsTitle: "What Is WanAI.cloud's Image to Video AI Generator?",
+    whatIsDescription:
+      "An image to video AI generator animates a still photo into a moving clip automatically. WanAI.cloud's free image to video AI tool adds natural motion, camera movement and life to your pictures. It is the fastest way to turn an image into video for free — no filming or editing software required.",
+    howToUseTitle: "How Do You Use WanAI.cloud's Image to Video AI?",
+    howToUseSteps: [
+      { title: "Step 1: Upload your image", description: "Upload a first frame image, or add a first and last frame for more control over the motion of your image to video clip." },
+      { title: "Step 2: Describe the motion", description: "Write a short prompt telling the AI video generator from image how the scene should move — pan, zoom or subject animation." },
+      { title: "Step 3: Generate and download", description: "Click Generate and the image to video AI animates your photo. Preview and download the image to video result for free." },
+    ],
+    doWithTitle: "What Can You Create with WanAI.cloud's Image to Video AI?",
+    doWithDescription: "From product shots to cinematic landscapes, this free image to video generator turns any still photo into motion.",
+    doWithItems: [
+      { title: "Image to Video for Product Photos", description: "Turn static product shots into rotating, panning or zooming image to video clips that grab attention in e-commerce and ads.", photo: IMG.food },
+      { title: "Image to Video AI for Portraits", description: "Animate portrait and lifestyle photos with subtle motion and depth — a polished image to video AI effect for social media and branding.", photo: IMG.portrait },
+      { title: "Image to Video for Landscapes", description: "Add slow pans and zooms to nature and travel photos, turning still landscapes into ambient AI video from image scenes.", photo: IMG.landscape },
+      { title: "First-to-Last Frame Image to Video", description: "Define a start and end frame and let the AI image to video generator create a smooth transition between them.", photo: IMG.scifi },
+    ],
+    whoIsForTitle: "Who Is WanAI.cloud's Image to Video AI For?",
+    whoIsForItems: [
+      { title: "E-commerce sellers", description: "Sellers animate product photos into short image to video clips for listings and ads, boosting engagement with the free AI video generator from image.", photo: IMG.food },
+      { title: "Photographers", description: "Photographers repurpose still images into motion, offering clients dynamic images to video AI slideshows and teasers.", photo: IMG.portrait },
+      { title: "Social media marketers", description: "Marketers turn brand photos into eye-catching animated posts, using image to video AI to stand out in busy feeds.", photo: IMG.landscape },
+    ],
+    whyChooseTitle: "Why Choose WanAI.cloud's Image to Video AI?",
+    whyChooseItems: [
+      { title: "Natural, coherent motion", description: "The image to video AI understands the scene and animates it realistically, giving output that looks shot rather than generated.", photo: IMG.portrait },
+      { title: "Free with no watermark", description: "Use this image to video AI free without watermark. Download clean clips — no hidden fees or logos on your videos.", photo: IMG.scifi },
+      { title: "First and last frame control", description: "Lock the start and end of your clip with first-to-last frame image to video, so the motion goes exactly where you want.", photo: IMG.animation },
+    ],
+    reviewsTitle: "What Do Users Say About WanAI.cloud's Image to Video AI?",
+    reviewCount: "From 1127 Reviews",
+    reviewItems: [
+      { title: "The best image to video AI I've tried", description: "I upload a product shot and get a clean pan and zoom in seconds. This free image to video generator beats paid tools and leaves no watermark.", rating: "5", name: "Hannah Lee", profession: "Shop Owner" },
+      { title: "Beautiful subtle motion", description: "The AI image to video generator adds just enough motion to portraits without looking fake. It is my favorite way to turn image into video for free for clients.", rating: "5", name: "Daniel Kim", profession: "Photographer" },
+      { title: "Smooth first-to-last transitions", description: "The first and last frame feature gives me full control. I created a seamless images to video AI morph that looked professionally edited.", rating: "5", name: "Olivia Brown", profession: "Motion Designer" },
+      { title: "Fast turnaround for social", description: "I turn brand photos into animated posts in minutes. The AI video generator from image output is clean and ready to publish on every platform.", rating: "4.9", name: "Noah Garcia", profession: "Social Media Lead" },
+      { title: "Great for travel memories", description: "I animate my landscape photos with slow pans. This image to video AI generator makes my still images feel like cinematic footage.", rating: "5", name: "Mia Chen", profession: "Travel Blogger" },
+      { title: "Easy and reliable", description: "I had zero editing experience and made my first image to video clip in one try. The free AI video generator from image keeps the whole flow simple.", rating: "5", name: "Ethan Taylor", profession: "Small Business Owner" },
+    ],
+    faqTitle: "What Are the Frequently Asked Questions About WanAI.cloud's Image to Video AI?",
+    faqItems: [
+      { title: "Is this image to video AI free to use?", description: "Yes. WanAI.cloud offers an image to video AI for free — upload a photo, animate it and download with no watermark and no credit card required." },
+      { title: "How does image to video AI work?", description: "The image to video AI reads your image, understands the scene and adds natural motion and camera movement that match your prompt." },
+      { title: "Can I use a first and last frame?", description: "Yes, WanAI.cloud supports first frame and first-to-last frame image to video, so you can control the start and end of the motion." },
+      { title: "What image formats are supported?", description: "The AI image to video generator accepts JPEG, PNG and WebP images for upload." },
+      { title: "Is the output really without watermark?", description: "Yes, this is an image to video AI free without watermark. Your downloaded clips are clean and ready to publish." },
+      { title: "What resolutions are available?", description: "You can generate image to video clips in 768P or 2K depending on your plan." },
+      { title: "How do I control the motion?", description: "Write a prompt describing the movement — pan, zoom or subject motion — and the AI video generator from image follows it." },
+      { title: "How long can an image to video clip be?", description: "Image to video clips can be generated from 4 to 15 seconds." },
+      { title: "Can I animate portraits and people?", description: "Yes, the image to video AI generator adds subtle natural motion to portraits and lifestyle photos while keeping subjects realistic." },
+      { title: "Is this the best image to video AI?", description: "WanAI.cloud is a best image to video AI, delivering cinematic, high-quality results." },
+    ],
+  },
+
+  "reference-to-video": {
+    h1Title: "Free Reference to Video AI Generator (No Watermark)",
+    h1Subtitle: "Turn images, video and audio references into consistent videos with WanAI.cloud's free reference to video AI generator. The reference to video AI workflow keeps subjects, sound and mood locked — no watermark and no editing skills required.",
+    whatIsTitle: "What Is WanAI.cloud's Reference to Video?",
+    whatIsDescription:
+      "Reference to video generation uses your uploaded images, video and audio as guides, so the AI produces output that matches them. WanAI.cloud's free reference to video AI tool feeds your multimodal reference into a structured context-aware workflow, keeping subjects consistent and matching the mood, camera style and soundscape you provide. It is the most controlled way to create video from existing material.",
+    howToUseTitle: "How Do You Use WanAI.cloud's Reference to Video?",
+    howToUseSteps: [
+      { title: "Step 1: Upload your references", description: "Add reference images, video and audio to define the subject, movement and sound for your image reference to video, audio reference to video or multimodal reference to video clip." },
+      { title: "Step 2: Write your prompt", description: "Describe the result you want and reference your uploads with @image, @video and @audio, following the reference to video prompting guide built into the tool." },
+      { title: "Step 3: Generate and download", description: "Click Generate and the reference to video AI builds a clip that stays consistent with your material. Download it for free." },
+    ],
+    doWithTitle: "What Can You Create with WanAI.cloud's Reference to Video?",
+    doWithDescription: "WanAI.cloud's reference to video tool lets you direct subjects, motion and audio, unlocking advanced AI video generator workflows.",
+    doWithItems: [
+      { title: "Image Reference to Video", description: "Lock a character or product's look with a reference image — a key image reference to video workflow for creators and brands.", photo: IMG.portrait },
+      { title: "Reference Video to Video", description: "Upload reference video to copy a camera move or pacing with a free AI reference video to video approach, then apply it to new content.", photo: IMG.scifi },
+      { title: "Audio Reference to Video", description: "Provide reference audio to guide the soundscape, so audio reference to video output matches the tone and rhythm you want.", photo: IMG.pet },
+      { title: "Multimodal Reference to Video", description: "Combine image, video and audio references for full control over subject, motion and sound in one multimodal reference to video workflow.", photo: IMG.animation },
+    ],
+    whoIsForTitle: "Who Is WanAI.cloud's Reference to Video For?",
+    whoIsForItems: [
+      { title: "Brands and agencies", description: "Agencies keep brand characters and styles consistent across campaigns using reference to video AI, powered by a structured multimodal workflow.", photo: IMG.portrait },
+      { title: "Filmmakers and editors", description: "Filmmakers use reference video and audio to preview scenes and match pacing, saving time on the reference to video pipeline.", photo: IMG.scifi },
+      { title: "Product teams", description: "Product teams reuse existing media as references, turning them into fresh clips with the AI video generator.", photo: IMG.food },
+    ],
+    whyChooseTitle: "Why Choose WanAI.cloud's Reference to Video?",
+    whyChooseItems: [
+      { title: "Structured context-aware generation", description: "A context-aware structuring step rewrites your prompt and references into a plan, keeping subjects consistent in every reference to video output.", photo: IMG.scifi },
+      { title: "True multimodal input", description: "Combine images, video and audio in one request, so multimodal reference to video output matches every aspect of your material.", photo: IMG.animation },
+      { title: "Cloud-based, no VRAM needed", description: "No local GPU or low VRAM workflow to set up — the reference to video AI runs in the cloud, delivering cinematic reference to video quality in your browser.", photo: IMG.portrait },
+    ],
+    reviewsTitle: "What Do Users Say About WanAI.cloud's Reference to Video?",
+    reviewCount: "From 1127 Reviews",
+    reviewItems: [
+      { title: "Character stays consistent across shots", description: "I feed a character image and the reference to video tool keeps the look locked in every clip. This reference to video AI is a game changer for our brand videos.", rating: "5", name: "Rachel Adams", profession: "Brand Manager" },
+      { title: "Multimodal input just works", description: "Combining an image, a video reference and an audio track in one request felt impossible before. WanAI.cloud's AI reference to video handled it perfectly.", rating: "5", name: "Tom Baker", profession: "Video Producer" },
+      { title: "Structured generation really helps", description: "The context-aware structuring makes my prompts and references work together. The reference to video output is far more predictable than other tools.", rating: "5", name: "Priya Sharma", profession: "AI Content Lead" },
+      { title: "Matches my reference footage", description: "I upload reference video for camera moves and the AI video generator applies the same pacing to new scenes. Huge time saver.", rating: "4.9", name: "David Clark", profession: "Editor" },
+      { title: "Great for audio-guided clips", description: "Adding reference audio to guide the sound changed everything. The audio reference to video result matched the tone I wanted on the first try.", rating: "5", name: "Laura Martinez", profession: "Sound Designer" },
+      { title: "Powerful and consistent", description: "For our product demos, reference to video keeps the same subject and style while swapping the scene. Reference to video quality is reliable every time.", rating: "5", name: "Chris Evans", profession: "Marketing Director" },
+    ],
+    faqTitle: "What Are the Frequently Asked Questions About WanAI.cloud's Reference to Video?",
+    faqItems: [
+      { title: "What is reference to video generation?", description: "Reference to video generation uses your uploaded images, video and audio as guides, so the AI video generator produces output that matches them." },
+      { title: "What references can I upload?", description: "You can upload reference images, video and audio. Combine them in one request for full multimodal reference to video control." },
+      { title: "How does context-aware structuring work?", description: "A context-aware structuring step rewrites your prompt and references into a plan, improving reference to video consistency." },
+      { title: "How do I reference my uploads in the prompt?", description: "Use @image, @video and @audio mentions in your prompt to tell the AI video generator which reference to use where." },
+      { title: "Can I use only audio as a reference?", description: "Reference audio must be combined with at least one image or video, since the AI video generator still needs visual input." },
+      { title: "Is this reference to video AI free?", description: "Yes. WanAI.cloud offers a free video generator AI with image reference, video reference and audio reference — no watermark and no credit card required." },
+      { title: "Do I need a powerful GPU or a low VRAM workflow?", description: "No. No low VRAM workflow is needed — the reference to video AI runs in the cloud, so you just open your browser." },
+      { title: "What resolutions are supported?", description: "Reference to video clips can be generated in 768P or 2K, depending on your plan." },
+      { title: "How long can clips be?", description: "Reference to video clips range from 4 to 15 seconds." },
+      { title: "What quality can I expect from reference to video?", description: "WanAI.cloud delivers cinematic, consistent reference to video quality with subjects, motion and sound locked to your references." },
+    ],
+  },
+
+  "wan-3.0": {
+    h1Title: "Wan 3.0 AI Video Generator — Free Online Text, Image & Reference to Video",
+    h1Subtitle: "Create wan 3.0 AI video free online. Turn text, images and reference media into cinematic wan 3.0 videos up to 30 seconds — no sign up, no watermark.",
+    whatIsTitle: "What Is WanAI.cloud's Wan 3.0 AI Video Generator?",
+    whatIsDescription:
+      "Wan 3.0 AI video generation turns a written prompt, an image or reference media into finished clips automatically. WanAI.cloud's free wan 3.0 AI video generator runs the wan 3.0 model in the cloud and supports text to video, image to video and reference to video. It is an online wan 3.0 AI video generator with no sign up, no watermark and clips up to 30 seconds.",
+    howToUseTitle: "How Do You Use WanAI.cloud's Wan 3.0 AI Video Generator?",
+    howToUseSteps: [
+      { title: "Step 1: Choose wan 3.0 and your mode", description: "Open the wan 3.0 AI video generator, pick text to video, image to video or reference to video, and select wan 3.0 as your model." },
+      { title: "Step 2: Add your prompt or references", description: "Type a prompt, upload an image, or add reference images, video and audio to guide wan 3.0 image to video and reference to video." },
+      { title: "Step 3: Generate and download", description: "Click Generate and wan 3.0 creates your clip in seconds. Preview and download — free, no watermark, no sign up." },
+    ],
+    doWithTitle: "What Can You Create with WanAI.cloud's Wan 3.0 AI Video Generator?",
+    doWithDescription: "The wan 3.0 AI video generator covers text, image and reference workflows in one free online tool.",
+    doWithItems: [
+      { title: "Wan 3.0 Text to Video", description: "Turn a written prompt into a cinematic wan 3.0 clip for scripts, ads and storyboards with a free online wan 3.0 AI video generator.", photo: IMG.scifi },
+      { title: "Wan 3.0 Image to Video", description: "Animate a still photo into smooth motion — wan 3.0 image to video for products, portraits and landscapes.", photo: IMG.portrait },
+      { title: "Wan 3.0 Reference to Video", description: "Use reference images, video and audio for wan 3.0 all-round reference to video control with consistent subjects and motion.", photo: IMG.animation },
+      { title: "Wan 3.0 30s Video", description: "Generate longer wan 3.0 30s video clips for trailers and narrative scenes with a wan 3.0 30s video generator.", photo: IMG.pet },
+    ],
+    whoIsForTitle: "Who Is WanAI.cloud's Wan 3.0 AI Video Generator For?",
+    whoIsForItems: [
+      { title: "Content creators", description: "Creators use this wan 3.0 AI video generator free online to produce daily short clips without editing software.", photo: IMG.portrait },
+      { title: "Marketers and brands", description: "Marketers turn copy and product images into wan 3.0 ads and teasers with the best free wan 3.0 AI video generator online.", photo: IMG.food },
+      { title: "Filmmakers and designers", description: "Filmmakers and designers prototype wan 3.0 30s video scenes and motion before production.", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "Why Choose WanAI.cloud's Wan 3.0 AI Video Generator?",
+    whyChooseItems: [
+      { title: "Real wan 3.0 model quality", description: "WanAI.cloud runs the genuine wan 3.0 model, delivering coherent motion and rich detail for wan AI video.", photo: IMG.scifi },
+      { title: "Free with no watermark", description: "Use this wan 3.0 AI video generator free with no sign up and no watermark.", photo: IMG.landscape },
+      { title: "One online tool", description: "One wan 3.0 AI video generator for text to video, image to video and reference to video, with clips up to 30 seconds.", photo: IMG.animation },
+    ],
+    reviewsTitle: "What Users Say About WanAI.cloud's Wan 3.0 AI Video Generator?",
+    reviewCount: "From 1127 Reviews",
+    reviewItems: [
+      { title: "The best free wan 3.0 AI video I've tried", description: "I typed one prompt and got a cinematic clip in under a minute. This wan 3.0 AI video generator free online beats paid tools and leaves no watermark.", rating: "5", name: "Jason Miller", profession: "Video Editor" },
+      { title: "Perfect for daily social content", description: "I batch text to video and image to video every morning with wan 3.0. The wan 3.0 AI video generator keeps my publishing cadence on track.", rating: "5", name: "Sofia Nguyen", profession: "Social Media Manager" },
+      { title: "Great for product teasers", description: "I describe a product scene and wan 3.0 turns it into a clean promo. The wan 3.0 image to video result is sharp and ready to publish.", rating: "5", name: "Liam Carter", profession: "E-commerce Owner" },
+      { title: "Impressive 30s cinematic output", description: "The wan 3.0 30s video generator gives real camera motion and atmosphere. I preview scenes before shooting and save hours.", rating: "4.9", name: "Aisha Patel", profession: "Film Director" },
+      { title: "Simple to learn", description: "I had never made a video before. I wrote a prompt, picked wan 3.0 and this free online generator did the rest.", rating: "5", name: "Emma Wilson", profession: "Blogger" },
+      { title: "My go-to wan AI video tool", description: "WanAI.cloud is my first stop for turning ideas into motion. Reliable, fast and genuinely free with no watermark.", rating: "5", name: "Marco Rossi", profession: "Creative Director" },
+    ],
+    faqTitle: "Wan 3.0 AI Video Generator FAQ",
+    faqItems: [
+      { title: "What is wan 3.0 AI video?", description: "Wan 3.0 AI video is video generated by the wan 3.0 model from text, images or reference media through WanAI.cloud's free online wan 3.0 AI video generator." },
+      { title: "Is the wan 3.0 AI video generator free?", description: "Yes. WanAI.cloud offers a free wan 3.0 AI video generator online with no watermark and no credit card required." },
+      { title: "What resolutions does wan 3.0 support?", description: "Wan 3.0 generates 480P, 720P and 1080P videos, so you can choose the quality that fits your project." },
+      { title: "How long can wan 3.0 videos be?", description: "Wan 3.0 clips range from 2 to 30 seconds, ideal for social shorts, ads and storyboards." },
+      { title: "Can I use images with wan 3.0?", description: "Yes, wan 3.0 image to video lets you upload a first frame or first and last frame to guide the motion." },
+      { title: "Does wan 3.0 support reference to video?", description: "Yes, wan 3.0 all-round reference to video uses reference images, video and audio to match subjects, motion and sound." },
+      { title: "Do I need to install software to use wan 3.0?", description: "No. The wan 3.0 AI video generator runs in your browser through the cloud — no install and no GPU required." },
+      { title: "Is there a watermark on wan 3.0 videos?", description: "No. Videos from the wan 3.0 AI video generator download clean and ready to publish." },
+      { title: "How is wan 3.0 different from other AI video generators?", description: "Wan 3.0 delivers coherent, longer clips up to 30 seconds with multimodal reference control in one free online tool." },
+      { title: "How do I write a good wan 3.0 prompt?", description: "Describe the subject, action, scene, camera angle and style. Detailed prompts help wan 3.0 produce more accurate results." },
+    ],
+  },
+
+  "minimax-h3": {
+    h1Title: "MiniMax H3 Video Generator — Free Online Text, Image & Reference to Video",
+    h1Subtitle: "Create MiniMax H3 video free online. Turn text, images and reference media into cinematic MiniMax H3 videos — no sign up, no watermark.",
+    whatIsTitle: "What Is WanAI.cloud's MiniMax H3 Video Generator?",
+    whatIsDescription:
+      "MiniMax H3 video generation turns a written prompt, an image or reference media into finished clips automatically. WanAI.cloud's free MiniMax H3 video generator runs the MiniMax H3 model in the cloud and supports text to video, image to video and reference to video. It is an online MiniMax H3 video generator with no sign up and no watermark.",
+    howToUseTitle: "How Do You Use WanAI.cloud's MiniMax H3 Video Generator?",
+    howToUseSteps: [
+      { title: "Step 1: Choose MiniMax H3 and your mode", description: "Open the MiniMax H3 video generator, pick text to video, image to video or reference to video, and select MiniMax H3 as your model." },
+      { title: "Step 2: Add your prompt or references", description: "Write a MiniMax H3 prompt, upload an image, or add reference images, video and audio to guide MiniMax H3 image to video and reference to video." },
+      { title: "Step 3: Generate and download", description: "Click Generate and MiniMax H3 creates your clip in seconds. Preview and download — free, no watermark, no sign up." },
+    ],
+    doWithTitle: "What Can You Create with WanAI.cloud's MiniMax H3 Video Generator?",
+    doWithDescription: "The MiniMax H3 video generator covers text, image and reference workflows in one free online tool.",
+    doWithItems: [
+      { title: "MiniMax H3 Text to Video", description: "Turn a MiniMax H3 prompt into a cinematic clip for scripts, ads and storyboards with a free online MiniMax H3 video generator.", photo: IMG.scifi },
+      { title: "MiniMax H3 Image to Video", description: "Animate a still photo into smooth motion — MiniMax H3 image to video for products, portraits and landscapes.", photo: IMG.portrait },
+      { title: "MiniMax H3 Reference to Video", description: "Use reference images, video and audio for MiniMax H3 reference to video with consistent subjects and motion.", photo: IMG.animation },
+      { title: "MiniMax H3 Multimodal Video", description: "Combine text, image and audio in one MiniMax H3 multimodal video for rich, coherent results.", photo: IMG.pet },
+    ],
+    whoIsForTitle: "Who Is WanAI.cloud's MiniMax H3 Video Generator For?",
+    whoIsForItems: [
+      { title: "Content creators", description: "Creators use this MiniMax H3 video generator free online to produce daily short clips without editing software.", photo: IMG.portrait },
+      { title: "Marketers and brands", description: "Marketers turn copy and product images into MiniMax H3 ads and teasers with the best free MiniMax H3 video generator.", photo: IMG.food },
+      { title: "Filmmakers and designers", description: "Filmmakers and designers prototype MiniMax H3 video scenes and motion before production.", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "Why Choose WanAI.cloud's MiniMax H3 Video Generator?",
+    whyChooseItems: [
+      { title: "Real MiniMax H3 model quality", description: "WanAI.cloud runs the genuine MiniMax H3 model, delivering coherent motion and rich detail for MiniMax H3 video generation.", photo: IMG.scifi },
+      { title: "Free with no watermark", description: "Use this MiniMax H3 video generator free with no sign up and no watermark.", photo: IMG.landscape },
+      { title: "One online tool", description: "One MiniMax H3 video generator for text to video, image to video and reference to video, all in your browser.", photo: IMG.animation },
+    ],
+    reviewsTitle: "What Users Say About WanAI.cloud's MiniMax H3 Video Generator?",
+    reviewCount: "From 1127 Reviews",
+    reviewItems: [
+      { title: "The best MiniMax H3 video I've made", description: "One MiniMax H3 prompt and I had a cinematic clip in under a minute. This MiniMax H3 video generator free online beats paid tools and leaves no watermark.", rating: "5", name: "Daniel Kim", profession: "Video Editor" },
+      { title: "Perfect for daily shorts", description: "I batch MiniMax H3 text to video every morning. The MiniMax H3 video generation keeps my social cadence consistent.", rating: "5", name: "Maya Chen", profession: "Social Media Manager" },
+      { title: "Great for product promos", description: "I describe a product scene and MiniMax H3 image to video turns it into a clean promo ready to publish.", rating: "5", name: "Owen Reed", profession: "E-commerce Owner" },
+      { title: "Cinematic MiniMax H3 results", description: "The MiniMax H3 reference to video gives real camera motion. I preview scenes before shooting and save hours.", rating: "4.9", name: "Priya Sharma", profession: "Film Director" },
+      { title: "Easy to learn", description: "I had never edited video before. I wrote a MiniMax H3 prompt and this free online generator did the rest.", rating: "5", name: "Lucas Brown", profession: "Blogger" },
+      { title: "My go-to MiniMax H3 tool", description: "WanAI.cloud is my first stop for MiniMax H3 video. Reliable, fast and genuinely free with no watermark.", rating: "5", name: "Ana Torres", profession: "Creative Director" },
+    ],
+    faqTitle: "MiniMax H3 Video Generator FAQ",
+    faqItems: [
+      { title: "What is MiniMax H3?", description: "MiniMax H3 is a multimodal video generation model. WanAI.cloud's MiniMax H3 video generator turns text, images and reference media into cinematic video." },
+      { title: "Is the MiniMax H3 video generator free?", description: "Yes. WanAI.cloud offers a free MiniMax H3 video generator online with no watermark and no credit card required." },
+      { title: "What is a good MiniMax H3 prompt?", description: "A good MiniMax H3 prompt describes the subject, action, scene, camera angle and style. Detailed MiniMax H3 prompts produce more accurate results." },
+      { title: "Does MiniMax H3 support image to video?", description: "Yes, MiniMax H3 image to video lets you upload a first frame or first and last frame to guide the motion." },
+      { title: "Does MiniMax H3 support reference to video?", description: "Yes, MiniMax H3 reference to video uses reference images, video and audio to match subjects, motion and sound." },
+      { title: "Is MiniMax H3 multimodal?", description: "Yes, MiniMax H3 is multimodal and accepts text, image, video and audio input for video generation." },
+      { title: "What resolutions does MiniMax H3 support?", description: "MiniMax H3 generates 768P and 2K videos on WanAI.cloud, with aspect ratios like 16:9, 9:16 and 1:1." },
+      { title: "Do I need software or a GPU to use MiniMax H3?", description: "No. The MiniMax H3 video generator runs in your browser through the cloud — no install and no GPU required." },
+      { title: "Is there a watermark on MiniMax H3 videos?", description: "No. Videos from the MiniMax H3 video generator download clean and ready to publish." },
+      { title: "How long can MiniMax H3 videos be?", description: "MiniMax H3 clips range from 4 to 15 seconds, ideal for social shorts, ads and storyboards." },
+    ],
+  },
+};
+
+// SEO 落地页内容（中文版，供切换语言时显示；英文版用于爬虫与默认展示）
+export const SEO_CONTENT_ZH: Record<string, SeoPageContent> = {
+  home: {
+    h1Title: "免费 AI 视频生成器 — 文生视频、图生视频与参考生视频",
+    h1Subtitle: "最好用的免费在线 AI 视频生成器。把文字、图片和参考素材变成电影级视频——无需注册、无水印、无限制。",
+    whatIsTitle: "什么是 WanAI.cloud 的 AI 视频生成器？",
+    whatIsDescription:
+      "AI 视频生成器能把文字提示词、图片和参考素材自动变成成片。WanAI.cloud 的免费 AI 视频生成器支持文生视频、图生视频和参考生视频，是一个无需注册、无水印、直接在浏览器里使用的在线 AI 视频生成器。",
+    howToUseTitle: "如何使用 WanAI.cloud 的 AI 视频生成器？",
+    howToUseSteps: [
+      { title: "第 1 步：选择模式", description: "选择文生视频、图生视频或参考生视频，然后在浏览器中打开 AI 视频生成器。" },
+      { title: "第 2 步：添加输入", description: "输入提示词、上传图片，或添加参考图片、视频和音频来引导这个免费 AI 视频生成器。" },
+      { title: "第 3 步：生成并下载", description: "点击生成，几秒内即可得到成片。预览并下载——免费、无水印、无需注册。" },
+    ],
+    doWithTitle: "用 WanAI.cloud 的 AI 视频生成器能做什么？",
+    doWithDescription: "WanAI.cloud 的免费 AI 视频生成器在一个在线工具里覆盖了文字、图片和参考三种工作流。",
+    doWithItems: [
+      { title: "文字生成视频", description: "把文字提示词变成电影级片段——用于剧本、广告和分镜的免费文字生成视频 AI。", photo: IMG.scifi },
+      { title: "图片生成视频", description: "让静态照片动起来——用于产品、人像和风景的免费图片生成视频 AI。", photo: IMG.portrait },
+      { title: "视频生成视频", description: "用参考视频复制运镜和节奏，再应用到新内容上。", photo: IMG.animation },
+      { title: "带音频的视频生成", description: "添加参考音频来引导声音——带声音的 AI 视频生成，保持一致的基调与节奏。", photo: IMG.pet },
+    ],
+    whoIsForTitle: "WanAI.cloud 的 AI 视频生成器适合谁？",
+    whoIsForItems: [
+      { title: "内容创作者", description: "创作者用这个在线 AI 视频生成器每天产出社交短片，无需复杂剪辑或软件。", photo: IMG.portrait },
+      { title: "营销与品牌", description: "营销人员用最好用的免费 AI 视频生成器，把文案、照片和参考素材变成广告和产品预告。", photo: IMG.food },
+      { title: "影视与设计", description: "影视和设计人员用生成式 AI 视频生成器做场景与动效原型，投产前先预览。", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "为什么选择 WanAI.cloud 的 AI 视频生成器？",
+    whyChooseItems: [
+      { title: "新一代视频质量", description: "一个真正的新一代 AI 视频生成器，动作连贯、细节丰富、结果可靠。", photo: IMG.scifi },
+      { title: "免费且无需注册", description: "免费使用这个 AI 视频生成器，无需注册、无水印——免费无限次、无限制。", photo: IMG.landscape },
+      { title: "一站式浏览器工具", description: "一个在线 AI 视频生成器平台，覆盖文字、图片和参考生视频，支持 768P/2K 与 4–15 秒。", photo: IMG.animation },
+    ],
+    reviewsTitle: "用户如何评价 WanAI.cloud 的 AI 视频生成器？",
+    reviewCount: "来自 1127 条评价",
+    reviewItems: [
+      { title: "我试过最好用的免费 AI 视频生成器", description: "我输入一句提示词，不到一分钟就得到了一段电影级片段。这个免费在线 AI 视频生成器比付费工具还好用，而且无水印。", rating: "5", name: "Jason Miller", profession: "Video Editor" },
+      { title: "日常社交内容神器", description: "我每天早上用文字和图片批量生成片段。这个免费、无需注册的 AI 视频生成器让我的发布节奏一直在线。", rating: "5", name: "Sofia Nguyen", profession: "Social Media Manager" },
+      { title: "产品预告很好用", description: "我描述一个产品场景，这个免费图片生成视频 AI 就把它变成干净利落的宣传片。无需软件、无水印。", rating: "5", name: "Liam Carter", profession: "E-commerce Owner" },
+      { title: "电影级输出令人印象深刻", description: "这个文字生成视频 AI 有真实的运镜和氛围。我在正式制作前用它预览镜头，省了大量时间。", rating: "4.9", name: "Aisha Patel", profession: "Film Director" },
+      { title: "简单易上手", description: "我以前从没做过视频。输入提示词、选个格式，这个在线 AI 视频生成器就全搞定了——免费、无限制。", rating: "5", name: "Emma Wilson", profession: "Blogger" },
+      { title: "我的首选生成式 AI 视频生成器", description: "WanAI.cloud 是我把想法变成动态画面的第一站。可靠、快速，而且免费无需注册。", rating: "5", name: "Marco Rossi", profession: "Creative Director" },
+    ],
+    faqTitle: "关于 WanAI.cloud AI 视频生成器的常见问题",
+    faqItems: [
+      { title: "这个 AI 视频生成器免费吗？", description: "免费。WanAI.cloud 是一个免费在线 AI 视频生成器，无需注册、无水印，打开即可生成。" },
+      { title: "这个 AI 视频生成器能生成什么？", description: "你可以在一个在线 AI 视频生成器平台上，从文字、图片以及参考视频或音频生成视频。" },
+      { title: "会带水印吗？", description: "不会。WanAI.cloud 是一个无水印的免费 AI 视频生成器，下载的视频干净、可直接发布。" },
+      { title: "需要注册吗？", description: "不需要。你可以免费、无需注册地在浏览器里使用这个 AI 视频生成器。" },
+      { title: "支持哪些分辨率？", description: "这个 AI 视频生成器支持 768P 和 2K，以及 21:9、16:9、4:3、1:1、3:4、9:16 等画面比例。" },
+      { title: "视频最长多少秒？", description: "可生成 4 到 15 秒的片段，适合短视频广告、社交帖子和预告。" },
+      { title: "底层是什么模型？", description: "WanAI.cloud 使用先进的生成式模型，带来电影级的 AI 视频生成质量。" },
+      { title: "真的是免费无限制吗？", description: "是的，这是一个免费无限次、无限制的 AI 视频生成器，你可以自由尝试。" },
+      { title: "生成的视频可以商用吗？", description: "可以。AI 视频生成器的输出可用于商业项目，发布前请查看你的套餐使用限制。" },
+      { title: "提示词该怎么写？", description: "描述主体、动作、场景、镜头角度和风格。详细的提示词能帮 AI 视频生成器产出更准确的结果。" },
+    ],
+  },
+
+  "text-to-video": {
+    h1Title: "免费文生视频 AI 生成器（无水印）",
+    h1Subtitle: "用最好用的文生视频 AI，几秒内把文字变成视频。WanAI.cloud 是免费的文生视频生成器，把提示词变成电影级 AI 视频——无水印、无需剪辑技能。",
+    whatIsTitle: "什么是文生视频 AI 生成器？",
+    whatIsDescription:
+      "文生视频 AI 生成器能把文字提示词自动变成成片。WanAI.cloud 的免费文字生成视频 AI 会读取你的场景描述、运镜和风格，然后渲染出一段连贯的视频。这是生成 AI 文生视频内容最快的方式——无需相机、演员或剪辑软件。",
+    howToUseTitle: "如何使用 WanAI.cloud 的免费文生视频生成器？",
+    howToUseSteps: [
+      { title: "第 1 步：写提示词", description: "描述主体、动作、场景、镜头角度和风格。细节越丰富，文生视频 AI 的结果越准确。" },
+      { title: "第 2 步：选择分辨率和时长", description: "选择 768P 或 2K、画面比例，并为你的文字生成视频 AI 片段设置 4 到 15 秒。" },
+      { title: "第 3 步：生成并下载", description: "点击生成，文生视频 AI 就会渲染出视频。预览输出并下载——免费文生视频、无水印。" },
+    ],
+    doWithTitle: "用文生视频 AI 生成器能做什么？",
+    doWithDescription: "从短视频社交片段到产品预告，这个免费文生视频生成器覆盖各种文字生成视频 AI 场景。",
+    doWithItems: [
+      { title: "社交媒体短视频", description: "用自动优化的画面比例和吸睛动效，为 TikTok、Reels 和 Shorts 生成竖版 AI 文生视频片段。", photo: IMG.portrait },
+      { title: "产品预告与广告", description: "描述一个产品场景，文生视频 AI 生成器会把它变成精致的宣传片段，适合电商和落地页。", photo: IMG.food },
+      { title: "电影级概念预览", description: "在正式拍摄前预览场景、氛围和运镜——用文字生成视频 AI 快速做分镜。", photo: IMG.scifi },
+      { title: "生活与自然画面", description: "为背景、广告和创意项目生成自然、旅行、生活类的文生视频场景。", photo: IMG.landscape },
+    ],
+    whoIsForTitle: "WanAI.cloud 的文生视频 AI 适合谁？",
+    whoIsForItems: [
+      { title: "内容创作者", description: "创作者用这个免费的文生视频 AI 生成器每天发布 AI 文生视频片段，无需复杂剪辑。", photo: IMG.portrait },
+      { title: "营销与品牌", description: "营销人员用文生视频 AI 把文案变成视频广告和产品预告，比拍摄更快地测试创意。", photo: IMG.food },
+      { title: "设计与故事创作者", description: "设计师和故事创作者用文字生成视频 AI 做场景与动效原型，投产前反复打磨。", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "为什么选择 WanAI.cloud 作为最好用的文生视频 AI？",
+    whyChooseItems: [
+      { title: "电影级文生视频质量", description: "一个最好用的文生视频 AI，动作连贯、细节丰富、结果可靠。", photo: IMG.scifi },
+      { title: "真正免费无水印", description: "免费使用这个无水印的文生视频 AI。写提示词、下载干净片段——无隐藏费用、无 logo。", photo: IMG.landscape },
+      { title: "快速、浏览器内完成", description: "无需安装或导出。几秒内把文字变成视频，支持 768P/2K、多种比例与 4–15 秒。", photo: IMG.animation },
+    ],
+    reviewsTitle: "用户如何评价 WanAI.cloud 的文生视频 AI？",
+    reviewCount: "来自 1127 条评价",
+    reviewItems: [
+      { title: "我试过最好用的文生视频 AI", description: "我输入一句话，不到一分钟就得到了精致片段。这个免费文生视频生成器比付费工具还好，而且无水印。", rating: "5", name: "Jason Miller", profession: "Video Editor" },
+      { title: "日常社交内容神器", description: "我每天早上为客户批量生成 AI 文生视频片段。文字生成视频 AI 动作流畅、比例就绪。", rating: "5", name: "Sofia Nguyen", profession: "Social Media Manager" },
+      { title: "免费产品预告很好用", description: "我描述一个产品场景，就能得到无水印的干净宣传片。文生视频 AI 生成器替我省下几个小时的手动动效。", rating: "5", name: "Liam Carter", profession: "E-commerce Owner" },
+      { title: "电影级输出", description: "文生视频的结果有真实的运镜和氛围。我在正式制作前预览镜头，省了大量规划时间。", rating: "4.9", name: "Aisha Patel", profession: "Film Director" },
+      { title: "简单易上手", description: "我以前从没做过视频。写提示词、选格式，这个免费文生视频 AI 生成器就全搞定了。", rating: "5", name: "Emma Wilson", profession: "Blogger" },
+      { title: "我的首选文字生成视频 AI", description: "WanAI.cloud 是我把文字想法变成动态画面的第一站。可靠、快速，而且真正免费。", rating: "5", name: "Marco Rossi", profession: "Creative Director" },
+    ],
+    faqTitle: "关于文生视频 AI 的常见问题",
+    faqItems: [
+      { title: "这个文生视频 AI 免费吗？", description: "免费。WanAI.cloud 提供免费的文生视频生成器——写提示词、生成、下载，无水印、无需信用卡。" },
+      { title: "文生视频 AI 是怎么工作的？", description: "文生视频 AI 读取你的提示词，理解场景、主体和动作，然后渲染出匹配你描述的视频。" },
+      { title: "输出真的无水印吗？", description: "是的，这是一个无水印的文生视频 AI。下载的片段干净、可直接发布。" },
+      { title: "文字生成视频 AI 支持哪些分辨率？", description: "WanAI.cloud 支持 768P 和 2K 的文生视频输出，你可以按项目选择质量。" },
+      { title: "支持哪些画面比例？", description: "可以用 21:9、16:9、4:3、1:1、3:4 和 9:16 生成文生视频，适配 YouTube、TikTok 和 Instagram。" },
+      { title: "生成的视频能有多长？", description: "文生视频片段可生成 4 到 15 秒，适合短视频广告、社交帖子和预告。" },
+      { title: "需要剪辑经验吗？", description: "不需要。这个免费文生视频 AI 生成器自动完成渲染——描述想法、下载结果即可。" },
+      { title: "生成的视频可以商用吗？", description: "可以。文生视频输出可用于商业项目，发布前请查看套餐使用限制。" },
+      { title: "什么是最好的文生视频 AI？", description: "WanAI.cloud 是一个最好用的文生视频 AI，电影级、高质量的生成结果。" },
+      { title: "提示词该怎么写？", description: "描述主体、动作、场景、镜头角度和风格。详细提示词能帮文字生成视频 AI 产出更准确的结果。" },
+    ],
+  },
+
+  "image-to-video": {
+    h1Title: "免费图生视频 AI 生成器（无水印）",
+    h1Subtitle: "用最好用的图生视频 AI，几秒内把照片变成视频。WanAI.cloud 的免费图生视频生成器让静态图片动起来——无水印、无需剪辑技能。",
+    whatIsTitle: "什么是 WanAI.cloud 的图生视频 AI 生成器？",
+    whatIsDescription:
+      "图生视频 AI 生成器能把静态照片自动变成动态片段。WanAI.cloud 的免费图生视频 AI 工具会为你的照片添加自然的运动、运镜和生命力。这是免费把图片变成视频最快的方式——无需拍摄或剪辑软件。",
+    howToUseTitle: "如何使用 WanAI.cloud 的图生视频 AI？",
+    howToUseSteps: [
+      { title: "第 1 步：上传图片", description: "上传首帧图片，或添加首帧和尾帧以更好地控制图生视频的运动。" },
+      { title: "第 2 步：描述运动", description: "写一段简短提示，告诉图片生成视频 AI 场景该怎么动——平移、缩放或主体动画。" },
+      { title: "第 3 步：生成并下载", description: "点击生成，图生视频 AI 会为你的照片添加动画。预览并免费下载图生视频结果。" },
+    ],
+    doWithTitle: "用 WanAI.cloud 的图生视频 AI 能做什么？",
+    doWithDescription: "从产品图到电影级风景，这个免费图生视频生成器让任何静态照片动起来。",
+    doWithItems: [
+      { title: "产品图生成视频", description: "把静态产品图变成旋转、平移或缩放的图生视频片段，在电商和广告里吸引眼球。", photo: IMG.food },
+      { title: "人像图生成视频 AI", description: "为人像和生活照添加微妙动效和景深——用于社交媒体和品牌的精致图生视频 AI 效果。", photo: IMG.portrait },
+      { title: "风景图生成视频", description: "为自然和旅行照片添加缓慢平移和缩放，把静态风景变成氛围感的图片生成视频场景。", photo: IMG.landscape },
+      { title: "首尾帧图生视频", description: "设定首帧和尾帧，让 AI 图生视频生成器在两者之间生成平滑过渡。", photo: IMG.scifi },
+    ],
+    whoIsForTitle: "WanAI.cloud 的图生视频 AI 适合谁？",
+    whoIsForItems: [
+      { title: "电商卖家", description: "卖家把产品照片做成短视频图生视频片段，用免费图片生成视频 AI 提升列表和广告的互动。", photo: IMG.food },
+      { title: "摄影师", description: "摄影师把静态图片变成动态，为客户提供动态图生视频 AI 幻灯片和预告。", photo: IMG.portrait },
+      { title: "社交媒体营销", description: "营销人员把品牌照片变成吸睛的动态帖子，用图生视频 AI 在信息流里脱颖而出。", photo: IMG.landscape },
+    ],
+    whyChooseTitle: "为什么选择 WanAI.cloud 的图生视频 AI？",
+    whyChooseItems: [
+      { title: "自然连贯的运动", description: "图生视频 AI 理解场景并真实地添加动画，输出看起来像实拍而非生成。", photo: IMG.portrait },
+      { title: "免费无水印", description: "免费使用这个无水印的图生视频 AI。下载干净片段——无隐藏费用、无 logo。", photo: IMG.scifi },
+      { title: "首尾帧控制", description: "用首尾帧图生视频锁定片段的开头和结尾，运动完全按你的想法走。", photo: IMG.animation },
+    ],
+    reviewsTitle: "用户如何评价 WanAI.cloud 的图生视频 AI？",
+    reviewCount: "来自 1127 条评价",
+    reviewItems: [
+      { title: "我试过最好用的图生视频 AI", description: "我上传一张产品图，几秒内就得到干净的平移和缩放。这个免费图生视频生成器比付费工具还好，而且无水印。", rating: "5", name: "Hannah Lee", profession: "Shop Owner" },
+      { title: "漂亮的微妙动效", description: "AI 图生视频生成器给人像添加恰到好处的动效，看起来一点也不假。这是我免费把图片变成视频给客户的首选方式。", rating: "5", name: "Daniel Kim", profession: "Photographer" },
+      { title: "平滑的首尾帧过渡", description: "首尾帧功能给了我完全的控制。我做出了一个看起来像专业剪辑的图生视频 AI 形变。", rating: "5", name: "Olivia Brown", profession: "Motion Designer" },
+      { title: "社交内容快速交付", description: "几分钟内把品牌照片变成动态帖子。图片生成视频 AI 的输出干净、可直接发布到各个平台。", rating: "4.9", name: "Noah Garcia", profession: "Social Media Lead" },
+      { title: "旅行回忆神器", description: "我用缓慢平移给我的风景照添加动画。这个图生视频 AI 生成器让静态照片有了电影感。", rating: "5", name: "Mia Chen", profession: "Travel Blogger" },
+      { title: "简单可靠", description: "我完全没有剪辑经验，一次就做出了我的第一个图生视频。免费图片生成视频 AI 让整个流程保持简单。", rating: "5", name: "Ethan Taylor", profession: "Small Business Owner" },
+    ],
+    faqTitle: "关于 WanAI.cloud 图生视频 AI 的常见问题",
+    faqItems: [
+      { title: "这个图生视频 AI 免费吗？", description: "免费。WanAI.cloud 提供免费的图生视频生成器——上传照片、添加动画、下载，无水印、无需信用卡。" },
+      { title: "图生视频 AI 是怎么工作的？", description: "图生视频 AI 读取你的图片，理解场景，并添加与提示词匹配的自然运动和运镜。" },
+      { title: "能用首帧和尾帧吗？", description: "可以。WanAI.cloud 支持首帧和首尾帧图生视频，让你控制运动开始和结束。" },
+      { title: "支持哪些图片格式？", description: "AI 图生视频生成器支持上传 JPEG、PNG 和 WebP 图片。" },
+      { title: "输出真的无水印吗？", description: "是的，这是一个无水印的图生视频 AI。下载的片段干净、可直接发布。" },
+      { title: "支持哪些分辨率？", description: "可以根据套餐生成 768P 或 2K 的图生视频片段。" },
+      { title: "怎么控制运动？", description: "写一段描述运动的提示词——平移、缩放或主体运动——图片生成视频 AI 会照做。" },
+      { title: "图生视频片段能有多长？", description: "图生视频片段可生成 4 到 15 秒。" },
+      { title: "能给人像和人物添加动画吗？", description: "可以。图生视频 AI 生成器会为人像和生活照添加微妙的自然运动，同时保持主体真实。" },
+      { title: "这是最好用的图生视频 AI 吗？", description: "WanAI.cloud 是一个最好用的图生视频 AI，电影级、高质量的结果。" },
+    ],
+  },
+
+  "reference-to-video": {
+    h1Title: "免费参考生视频 AI 生成器（无水印）",
+    h1Subtitle: "用 WanAI.cloud 的免费参考生视频 AI 生成器，把图片、视频和音频参考变成一致的视频。参考生视频 AI 工作流锁定主体、声音和氛围——无水印、无需剪辑技能。",
+    whatIsTitle: "什么是 WanAI.cloud 的参考生视频？",
+    whatIsDescription:
+      "参考生视频用你上传的图片、视频和音频作为引导，让 AI 输出与之匹配的结果。WanAI.cloud 的免费参考生视频 AI 工具把你的多模态参考送入结构化、上下文感知的工作流，保持主体一致，并匹配你提供的氛围、运镜和声音。这是从现有素材创作视频最可控的方式。",
+    howToUseTitle: "如何使用 WanAI.cloud 的参考生视频？",
+    howToUseSteps: [
+      { title: "第 1 步：上传参考素材", description: "添加参考图片、视频和音频，为你的图片参考生视频、音频参考生视频或多模态参考生视频定义主体、运动和声音。" },
+      { title: "第 2 步：写提示词", description: "描述你想要的结果，并用 @image、@video、@audio 引用上传的素材，遵循工具内置的参考生视频提示指南。" },
+      { title: "第 3 步：生成并下载", description: "点击生成，参考生视频 AI 会生成与你素材保持一致、免费的片段。" },
+    ],
+    doWithTitle: "用 WanAI.cloud 的参考生视频能做什么？",
+    doWithDescription: "WanAI.cloud 的参考生视频工具让你掌控主体、运动和音频，解锁高级 AI 视频生成工作流。",
+    doWithItems: [
+      { title: "图片参考生视频", description: "用一张参考图片锁定角色或产品的外观——创作者和品牌的关键图片参考生视频工作流。", photo: IMG.portrait },
+      { title: "视频参考生视频", description: "用免费的 AI 视频参考生视频方式，上传参考视频复制运镜或节奏，再应用到新内容。", photo: IMG.scifi },
+      { title: "音频参考生视频", description: "提供参考音频来引导声音，让音频参考生视频输出匹配你想要的基调与节奏。", photo: IMG.pet },
+      { title: "多模态参考生视频", description: "在一个多模态参考生视频工作流里，组合图片、视频和音频参考，完全掌控主体、运动和声音。", photo: IMG.animation },
+    ],
+    whoIsForTitle: "WanAI.cloud 的参考生视频适合谁？",
+    whoIsForItems: [
+      { title: "品牌与代理机构", description: "代理机构用参考生视频 AI 在多个活动中保持品牌角色和风格一致，由结构化多模态工作流驱动。", photo: IMG.portrait },
+      { title: "影视与剪辑", description: "影视人员用参考视频和音频预览场景、匹配节奏，节省参考生视频流程的时间。", photo: IMG.scifi },
+      { title: "产品团队", description: "产品团队复用现有媒体作为参考，用 AI 视频生成器把它们变成新片段。", photo: IMG.food },
+    ],
+    whyChooseTitle: "为什么选择 WanAI.cloud 的参考生视频？",
+    whyChooseItems: [
+      { title: "结构化、上下文感知的生成", description: "一个上下文感知的结构化步骤把你的提示词和参考重写为计划，让每次参考生视频输出的主体保持一致。", photo: IMG.scifi },
+      { title: "真正的多模态输入", description: "在一次请求中组合图片、视频和音频，让多模态参考生视频输出匹配你素材的每个方面。", photo: IMG.animation },
+      { title: "云端运行、无需显存", description: "无需本地 GPU 或低显存工作流——参考生视频 AI 在云端运行，在浏览器里交付电影级参考生视频质量。", photo: IMG.portrait },
+    ],
+    reviewsTitle: "用户如何评价 WanAI.cloud 的参考生视频？",
+    reviewCount: "来自 1127 条评价",
+    reviewItems: [
+      { title: "角色在多个镜头里保持一致", description: "我输入一张角色图，参考生视频工具就把外观锁定在每个片段里。这个参考生视频 AI 是我们品牌视频的游戏规则改变者。", rating: "5", name: "Rachel Adams", profession: "Brand Manager" },
+      { title: "多模态输入就是好用", description: "以前一次请求里组合图片、视频参考和音轨简直不可能。WanAI.cloud 的参考生视频完美处理了。", rating: "5", name: "Tom Baker", profession: "Video Producer" },
+      { title: "结构化生成真的有用", description: "上下文感知的结构化让我的提示词和参考配合得很好。参考生视频输出比其他工具可预测得多。", rating: "5", name: "Priya Sharma", profession: "AI Content Lead" },
+      { title: "匹配我的参考素材", description: "我上传参考视频做运镜，AI 视频生成器就把同样的节奏应用到新场景。省了大量时间。", rating: "4.9", name: "David Clark", profession: "Editor" },
+      { title: "音频引导片段很棒", description: "添加参考音频引导声音改变了一切。音频参考生视频结果第一次就匹配了我想要的基调。", rating: "5", name: "Laura Martinez", profession: "Sound Designer" },
+      { title: "强大且一致", description: "对我们的产品演示，参考生视频保持相同的主体和风格，同时替换场景。参考生视频质量每次都可靠。", rating: "5", name: "Chris Evans", profession: "Marketing Director" },
+    ],
+    faqTitle: "关于 WanAI.cloud 参考生视频的常见问题",
+    faqItems: [
+      { title: "什么是参考生视频生成？", description: "参考生视频生成用你上传的图片、视频和音频作为引导，让 AI 视频生成器输出与之匹配的结果。" },
+      { title: "能上传哪些参考？", description: "可以上传参考图片、视频和音频。在一次请求中组合它们，实现完整的多模态参考生视频控制。" },
+      { title: "上下文感知的结构化是怎么工作的？", description: "一个上下文感知的结构化步骤会把你的提示词和参考重写为计划，提升参考生视频的一致性。" },
+      { title: "如何在提示词里引用上传素材？", description: "在提示词里用 @image、@video 和 @audio 告诉 AI 视频生成器在哪里使用哪个参考。" },
+      { title: "可以只用音频做参考吗？", description: "参考音频必须搭配至少一张图片或视频，因为 AI 视频生成器仍然需要视觉输入。" },
+      { title: "这个参考生视频 AI 免费吗？", description: "免费。WanAI.cloud 提供带图片、视频和音频参考的免费视频生成 AI——无水印、无需信用卡。" },
+      { title: "需要强大的 GPU 或低显存工作流吗？", description: "不需要。无需低显存工作流——参考生视频 AI 在云端运行，打开浏览器即可。" },
+      { title: "支持哪些分辨率？", description: "可以根据套餐生成 768P 或 2K 的参考生视频片段。" },
+      { title: "片段能有多长？", description: "参考生视频片段为 4 到 15 秒。" },
+      { title: "参考生视频质量如何？", description: "WanAI.cloud 交付电影级、一致的参考生视频质量，主体、运动和声音都锁定到你的参考。" },
+    ],
+  },
+
+  "wan-3.0": {
+    h1Title: "Wan 3.0 AI 视频生成器 — 免费在线文字、图片与参考生视频",
+    h1Subtitle: "免费在线生成 Wan 3.0 AI 视频。把文字、图片和参考素材变成电影级 Wan 3.0 视频，最长 30 秒——无需注册、无水印。",
+    whatIsTitle: "什么是 WanAI.cloud 的 Wan 3.0 AI 视频生成器？",
+    whatIsDescription:
+      "Wan 3.0 AI 视频生成能把文字提示词、图片或参考素材自动变成成片。WanAI.cloud 的免费 Wan 3.0 AI 视频生成器在云端运行 wan 3.0 模型，支持文生视频、图生视频和参考生视频。它是一个无需注册、无水印、最长 30 秒的在线 Wan 3.0 AI 视频生成器。",
+    howToUseTitle: "如何使用 WanAI.cloud 的 Wan 3.0 AI 视频生成器？",
+    howToUseSteps: [
+      { title: "第 1 步：选择 wan 3.0 与模式", description: "打开 Wan 3.0 AI 视频生成器，选择文生视频、图生视频或参考生视频，并选择 wan 3.0 作为模型。" },
+      { title: "第 2 步：添加提示词或参考素材", description: "输入提示词、上传图片，或添加参考图片、视频和音频来引导 wan 3.0 图生视频与参考生视频。" },
+      { title: "第 3 步：生成并下载", description: "点击生成，wan 3.0 几秒内生成片段。预览并下载——免费、无水印、无需注册。" },
+    ],
+    doWithTitle: "用 WanAI.cloud 的 Wan 3.0 AI 视频生成器能做什么？",
+    doWithDescription: "Wan 3.0 AI 视频生成器在一个免费在线工具里覆盖文字、图片和参考三种工作流。",
+    doWithItems: [
+      { title: "Wan 3.0 文生视频", description: "用免费在线 Wan 3.0 AI 视频生成器把文字提示词变成电影级片段，用于剧本、广告和分镜。", photo: IMG.scifi },
+      { title: "Wan 3.0 图生视频", description: "让静态照片自然动起来——Wan 3.0 图生视频用于产品、人像和风景。", photo: IMG.portrait },
+      { title: "Wan 3.0 参考生视频", description: "用参考图片、视频和音频实现 Wan 3.0 全方面参考生视频，主体与运镜保持一致。", photo: IMG.animation },
+      { title: "Wan 3.0 30 秒视频", description: "用 Wan 3.0 30 秒视频生成器生成长片段，用于预告片和叙事场景。", photo: IMG.pet },
+    ],
+    whoIsForTitle: "WanAI.cloud 的 Wan 3.0 AI 视频生成器适合谁？",
+    whoIsForItems: [
+      { title: "内容创作者", description: "创作者用这个免费的在线 Wan 3.0 AI 视频生成器每天产出短片，无需剪辑软件。", photo: IMG.portrait },
+      { title: "营销与品牌", description: "营销人员用最好用的免费在线 Wan 3.0 AI 视频生成器，把文案和产品图变成广告与预告。", photo: IMG.food },
+      { title: "影视与设计", description: "影视和设计人员在投产前用 Wan 3.0 30 秒视频生成器做场景与动效原型。", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "为什么选择 WanAI.cloud 的 Wan 3.0 AI 视频生成器？",
+    whyChooseItems: [
+      { title: "真正的 wan 3.0 模型质量", description: "WanAI.cloud 运行真正的 wan 3.0 模型，带来连贯运镜和丰富细节的 wan AI 视频。", photo: IMG.scifi },
+      { title: "免费且无水印", description: "免费使用这个 Wan 3.0 AI 视频生成器，无需注册、无水印。", photo: IMG.landscape },
+      { title: "一站式在线工具", description: "一个 Wan 3.0 AI 视频生成器覆盖文生、图生与参考生视频，最长 30 秒。", photo: IMG.animation },
+    ],
+    reviewsTitle: "用户如何评价 WanAI.cloud 的 Wan 3.0 AI 视频生成器？",
+    reviewCount: "来自 1127 条评价",
+    reviewItems: [
+      { title: "我试过最好用的免费 Wan 3.0 AI 视频", description: "我输入一句提示词，不到一分钟就得到电影级片段。这个免费在线 Wan 3.0 AI 视频生成器比付费工具还好，而且无水印。", rating: "5", name: "Jason Miller", profession: "Video Editor" },
+      { title: "日常社交内容神器", description: "我每天早上用 wan 3.0 批量生成文生视频和图生视频，发布节奏一直在线。", rating: "5", name: "Sofia Nguyen", profession: "Social Media Manager" },
+      { title: "产品预告很好用", description: "我描述一个产品场景，Wan 3.0 图生视频就把它变成干净利落的宣传片，可直接发布。", rating: "5", name: "Liam Carter", profession: "E-commerce Owner" },
+      { title: "令人印象深刻的 30 秒电影级输出", description: "Wan 3.0 30 秒视频生成器有真实运镜和氛围，我在拍摄前预览镜头，省下大量时间。", rating: "4.9", name: "Aisha Patel", profession: "Film Director" },
+      { title: "简单易上手", description: "我以前从没做过视频。输入提示词、选 wan 3.0，这个免费在线生成器就全搞定了。", rating: "5", name: "Emma Wilson", profession: "Blogger" },
+      { title: "我的首选 wan AI 视频工具", description: "WanAI.cloud 是我把想法变成动态画面的第一站。可靠、快速，而且真正免费无水印。", rating: "5", name: "Marco Rossi", profession: "Creative Director" },
+    ],
+    faqTitle: "Wan 3.0 AI 视频生成器常见问题",
+    faqItems: [
+      { title: "什么是 wan 3.0 AI 视频？", description: "Wan 3.0 AI 视频是通过 WanAI.cloud 的免费在线 Wan 3.0 AI 视频生成器，由 wan 3.0 模型从文字、图片或参考素材生成的视频。" },
+      { title: "Wan 3.0 AI 视频生成器免费吗？", description: "免费。WanAI.cloud 提供免费的在线 Wan 3.0 AI 视频生成器，无水印、无需信用卡。" },
+      { title: "wan 3.0 支持哪些分辨率？", description: "wan 3.0 可生成 480P、720P 和 1080P 视频，你可以按项目选择质量。" },
+      { title: "Wan 3.0 视频最长多少秒？", description: "Wan 3.0 片段为 2 到 30 秒，适合社交短片、广告和分镜。" },
+      { title: "wan 3.0 能用图片吗？", description: "可以，Wan 3.0 图生视频支持上传首帧或首尾帧来引导运镜。" },
+      { title: "wan 3.0 支持参考生视频吗？", description: "支持，Wan 3.0 全方面参考生视频用参考图片、视频和音频来匹配主体、运镜和声音。" },
+      { title: "使用 wan 3.0 需要安装软件吗？", description: "不需要。Wan 3.0 AI 视频生成器在浏览器里通过云端运行，无需安装、无需 GPU。" },
+      { title: "Wan 3.0 视频带水印吗？", description: "不带。Wan 3.0 AI 视频生成器下载的视频干净、可直接发布。" },
+      { title: "wan 3.0 和其他 AI 视频生成器有什么不同？", description: "wan 3.0 在一个免费在线工具里提供连贯、最长 30 秒的片段与多模态参考控制。" },
+      { title: "怎么写好 wan 3.0 提示词？", description: "描述主体、动作、场景、镜头角度和风格。详细的提示词能帮 wan 3.0 产出更准确的结果。" },
+    ],
+  },
+
+  "minimax-h3": {
+    h1Title: "MiniMax H3 视频生成器 — 免费在线文字、图片与参考生视频",
+    h1Subtitle: "免费在线生成 MiniMax H3 视频。把文字、图片和参考素材变成电影级 MiniMax H3 视频——无需注册、无水印。",
+    whatIsTitle: "什么是 WanAI.cloud 的 MiniMax H3 视频生成器？",
+    whatIsDescription:
+      "MiniMax H3 视频生成能把文字提示词、图片或参考素材自动变成成片。WanAI.cloud 的免费 MiniMax H3 视频生成器在云端运行 MiniMax H3 模型，支持文生视频、图生视频和参考生视频。它是一个无需注册、无水印的在线 MiniMax H3 视频生成器。",
+    howToUseTitle: "如何使用 WanAI.cloud 的 MiniMax H3 视频生成器？",
+    howToUseSteps: [
+      { title: "第 1 步：选择 MiniMax H3 与模式", description: "打开 MiniMax H3 视频生成器，选择文生视频、图生视频或参考生视频，并选择 MiniMax H3 作为模型。" },
+      { title: "第 2 步：添加提示词或参考素材", description: "写一段 MiniMax H3 提示词、上传图片，或添加参考图片、视频和音频来引导 MiniMax H3 图生视频与参考生视频。" },
+      { title: "第 3 步：生成并下载", description: "点击生成，MiniMax H3 几秒内生成片段。预览并下载——免费、无水印、无需注册。" },
+    ],
+    doWithTitle: "用 WanAI.cloud 的 MiniMax H3 视频生成器能做什么？",
+    doWithDescription: "MiniMax H3 视频生成器在一个免费在线工具里覆盖文字、图片和参考三种工作流。",
+    doWithItems: [
+      { title: "MiniMax H3 文生视频", description: "用免费在线 MiniMax H3 视频生成器把提示词变成电影级片段，用于剧本、广告和分镜。", photo: IMG.scifi },
+      { title: "MiniMax H3 图生视频", description: "让静态照片自然动起来——MiniMax H3 图生视频用于产品、人像和风景。", photo: IMG.portrait },
+      { title: "MiniMax H3 参考生视频", description: "用参考图片、视频和音频实现 MiniMax H3 参考生视频，主体与运镜保持一致。", photo: IMG.animation },
+      { title: "MiniMax H3 多模态视频", description: "在一个 MiniMax H3 多模态视频里结合文字、图片和音频，得到丰富连贯的结果。", photo: IMG.pet },
+    ],
+    whoIsForTitle: "WanAI.cloud 的 MiniMax H3 视频生成器适合谁？",
+    whoIsForItems: [
+      { title: "内容创作者", description: "创作者用这个免费的在线 MiniMax H3 视频生成器每天产出短片，无需剪辑软件。", photo: IMG.portrait },
+      { title: "营销与品牌", description: "营销人员用最好用的免费 MiniMax H3 视频生成器，把文案和产品图变成广告与预告。", photo: IMG.food },
+      { title: "影视与设计", description: "影视和设计人员在投产前用 MiniMax H3 视频生成器做场景与动效原型。", photo: IMG.scifi },
+    ],
+    whyChooseTitle: "为什么选择 WanAI.cloud 的 MiniMax H3 视频生成器？",
+    whyChooseItems: [
+      { title: "真正的 MiniMax H3 模型质量", description: "WanAI.cloud 运行真正的 MiniMax H3 模型，为 MiniMax H3 视频生成带来连贯运镜和丰富细节。", photo: IMG.scifi },
+      { title: "免费且无水印", description: "免费使用这个 MiniMax H3 视频生成器，无需注册、无水印。", photo: IMG.landscape },
+      { title: "一站式在线工具", description: "一个 MiniMax H3 视频生成器覆盖文生、图生与参考生视频，全部在浏览器里完成。", photo: IMG.animation },
+    ],
+    reviewsTitle: "用户如何评价 WanAI.cloud 的 MiniMax H3 视频生成器？",
+    reviewCount: "来自 1127 条评价",
+    reviewItems: [
+      { title: "我用过最好的 MiniMax H3 视频", description: "一段 MiniMax H3 提示词，不到一分钟就得到电影级片段。这个免费在线 MiniMax H3 视频生成器比付费工具还好，而且无水印。", rating: "5", name: "Daniel Kim", profession: "Video Editor" },
+      { title: "日常短片神器", description: "我每天早上批量生成 MiniMax H3 文生视频，MiniMax H3 视频生成让我的发布节奏保持一致。", rating: "5", name: "Maya Chen", profession: "Social Media Manager" },
+      { title: "产品宣传很好用", description: "我描述一个产品场景，MiniMax H3 图生视频就把它变成干净利落的宣传片，可直接发布。", rating: "5", name: "Owen Reed", profession: "E-commerce Owner" },
+      { title: "电影级 MiniMax H3 输出", description: "MiniMax H3 参考生视频有真实运镜，我在拍摄前预览镜头，省下大量时间。", rating: "4.9", name: "Priya Sharma", profession: "Film Director" },
+      { title: "简单易上手", description: "我以前从没剪辑过视频。写一段 MiniMax H3 提示词，这个免费在线生成器就全搞定了。", rating: "5", name: "Lucas Brown", profession: "Blogger" },
+      { title: "我的首选 MiniMax H3 工具", description: "WanAI.cloud 是我做 MiniMax H3 视频的第一站。可靠、快速，而且真正免费无水印。", rating: "5", name: "Ana Torres", profession: "Creative Director" },
+    ],
+    faqTitle: "MiniMax H3 视频生成器常见问题",
+    faqItems: [
+      { title: "什么是 MiniMax H3？", description: "MiniMax H3 是一个多模态视频生成模型。WanAI.cloud 的 MiniMax H3 视频生成器能把文字、图片和参考素材变成电影级视频。" },
+      { title: "MiniMax H3 视频生成器免费吗？", description: "免费。WanAI.cloud 提供免费的在线 MiniMax H3 视频生成器，无水印、无需信用卡。" },
+      { title: "怎么写好 MiniMax H3 提示词？", description: "好的 MiniMax H3 提示词会描述主体、动作、场景、镜头角度和风格。详细的 MiniMax H3 提示词能产出更准确的结果。" },
+      { title: "MiniMax H3 支持图生视频吗？", description: "支持，MiniMax H3 图生视频可上传首帧或首尾帧来引导运镜。" },
+      { title: "MiniMax H3 支持参考生视频吗？", description: "支持，MiniMax H3 参考生视频用参考图片、视频和音频来匹配主体、运镜和声音。" },
+      { title: "MiniMax H3 是多模态的吗？", description: "是的，MiniMax H3 是多模态的，可接受文字、图片、视频和音频输入来生成视频。" },
+      { title: "MiniMax H3 支持哪些分辨率？", description: "在 WanAI.cloud 上，MiniMax H3 可生成 768P 和 2K 视频，并支持 16:9、9:16、1:1 等比例。" },
+      { title: "使用 MiniMax H3 需要软件或 GPU 吗？", description: "不需要。MiniMax H3 视频生成器在浏览器里通过云端运行，无需安装、无需 GPU。" },
+      { title: "MiniMax H3 视频带水印吗？", description: "不带。MiniMax H3 视频生成器下载的视频干净、可直接发布。" },
+      { title: "MiniMax H3 视频最长多少秒？", description: "MiniMax H3 片段为 4 到 15 秒，适合社交短片、广告和分镜。" },
+    ],
+  },
+};

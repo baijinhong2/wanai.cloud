@@ -1,0 +1,23 @@
+{
+  "name": "WanAI.cloud — AI 视频生成器",
+  "short_name": "WanAI",
+  "description": "多模态 AI 视频生成：文生视频、图生视频、参考生视频。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b14",
+  "theme_color": "#0b0b14",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

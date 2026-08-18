@@ -1,0 +1,171 @@
+{
+  "home": {
+    "path": "/",
+    "en": {
+      "title": "AI Video Generator — Text, Image & Reference | WanAI.cloud",
+      "description": "WanAI.cloud is a free AI video generator online. Turn text, images and reference media into cinematic videos — no sign up, no watermark. Start free.",
+      "keywords": "AI video generator, free AI video generator, text to video, image to video, reference to video"
+    },
+    "zh": {
+      "title": "AI 视频生成器 — 文字、图片与参考转视频 | WanAI.cloud",
+      "description": "WanAI.cloud 是一个免费的在线 AI 视频生成器。把文字、图片和参考素材变成电影级视频——无需注册，无水印。免费开始。",
+      "keywords": "AI 视频生成器, 免费 AI 视频生成器, 文生视频, 图生视频, 参考生视频"
+    }
+  },
+  "text-to-video": {
+    "path": "/text-to-video",
+    "en": {
+      "title": "Text to Video AI — Free & No Watermark | WanAI.cloud",
+      "description": "Turn text into video with WanAI.cloud's free text to video AI generator. Type a prompt and create HD video from text — no watermark. Start free.",
+      "keywords": "text to video ai, text to video generator, ai video generator from text, free text to video ai"
+    },
+    "zh": {
+      "title": "文生视频 AI — 免费且无水印 | WanAI.cloud",
+      "description": "使用 WanAI.cloud 的免费文生视频 AI 生成器，把文字变成视频。输入提示词，即可生成无水印高清视频。免费开始生成。",
+      "keywords": "文生视频 AI, 文生视频生成器, 文字生成视频 AI, 免费文生视频 AI"
+    }
+  },
+  "image-to-video": {
+    "path": "/image-to-video",
+    "en": {
+      "title": "Image to Video AI — Free AI Photo to Video | WanAI.cloud",
+      "description": "Animate photos into video with WanAI.cloud's free image to video AI generator. Upload a first frame and make smooth 768P or 2K video. Start free.",
+      "keywords": "image to video ai, image to video, first frame to video, ai image to video generator"
+    },
+    "zh": {
+      "title": "图生视频 AI — 免费图片转视频 | WanAI.cloud",
+      "description": "使用 WanAI.cloud 的免费图生视频 AI 生成器，让照片动起来变成视频。上传首帧，生成 768P 或 2K 的流畅视频。免费开始。",
+      "keywords": "图生视频 AI, 图生视频, 首帧生视频, 图片生成视频 AI"
+    }
+  },
+  "reference-to-video": {
+    "path": "/reference-to-video",
+    "en": {
+      "title": "Reference to Video AI — Free Generator | WanAI.cloud",
+      "description": "Make consistent videos from reference images, video and audio with WanAI.cloud's free reference to video AI generator — cinematic, consistent results. Start free.",
+      "keywords": "reference to video ai, reference to video, multimodal video generator, image reference to video, audio reference to video"
+    },
+    "zh": {
+      "title": "参考生视频 AI — 免费生成器 | WanAI.cloud",
+      "description": "使用 WanAI.cloud 的免费参考生视频 AI 生成器，从参考图片、视频和音频生成一致的视频，实现电影级效果。免费开始。",
+      "keywords": "参考生视频 AI, 参考生视频, 多模态视频生成器, 图片参考生视频, 音频参考生视频"
+    }
+  },
+  "explore": {
+    "path": "/explore",
+    "en": {
+      "title": "Explore — AI Video & Image Gallery | WanAI.cloud",
+      "description": "Browse a curated gallery of AI-generated videos and images — pets, portraits, sci-fi, landscapes, food and animation. Get inspired for your next AI project.",
+      "keywords": "explore, ai video, ai image, ai gallery, ai showcase, WanAI.cloud"
+    },
+    "zh": {
+      "title": "探索 — AI 视频与图片画廊 | WanAI.cloud",
+      "description": "浏览精选的 AI 视频与图片画廊：萌宠、人像、科幻、风景、美食、动画。为你的下一个 AI 项目寻找灵感。",
+      "keywords": "探索, AI 视频, AI 图片, AI 画廊, AI 素材, WanAI.cloud"
+    }
+  },
+  "pricing": {
+    "path": "/pricing",
+    "en": {
+      "title": "Pricing — AI Video Generation Plans | WanAI.cloud",
+      "description": "Simple monthly plans priced in USD with regional discounts. Choose Basic, Pro or Ultra and start generating MiniMax H3 AI videos.",
+      "keywords": "pricing, plans, ai video, MiniMax H3, credits"
+    },
+    "zh": {
+      "title": "价格 — AI 视频生成套餐 | WanAI.cloud",
+      "description": "以美元计价的月付套餐，按地区优惠。选择 Basic、Pro 或 Ultra，开始生成 MiniMax H3 AI 视频。",
+      "keywords": "价格, 套餐, AI 视频, MiniMax H3, 积分"
+    }
+  },
+  "profile": {
+    "path": "/profile",
+    "en": {
+      "title": "My Account — Profile & Credits | WanAI.cloud",
+      "description": "Manage your WanAI.cloud account, check your membership plan, credit balance and generation history.",
+      "keywords": "account, profile, credits, WanAI.cloud"
+    },
+    "zh": {
+      "title": "个人中心 — 账号与积分 | WanAI.cloud",
+      "description": "管理你的 WanAI.cloud 账号，查看会员套餐、积分余额与生成记录。",
+      "keywords": "账号, 个人中心, 积分, WanAI.cloud"
+    }
+  },
+  "about": {
+    "path": "/about",
+    "en": {
+      "title": "About Us — AI Video Generation Platform | WanAI.cloud",
+      "description": "Learn about WanAI.cloud, a free AI video generation platform for text to video, image to video and reference to video. Start today.",
+      "keywords": "about WanAI.cloud, AI video generation platform, text to video, image to video"
+    },
+    "zh": {
+      "title": "关于我们 — AI 视频生成平台 | WanAI.cloud",
+      "description": "了解 WanAI.cloud，一个免费 AI 视频生成平台，支持文生视频、图生视频与参考生视频。今天就免费开始创作。",
+      "keywords": "关于 WanAI.cloud, AI 视频生成平台, 文生视频, 图生视频"
+    }
+  },
+  "contact": {
+    "path": "/contact",
+    "en": {
+      "title": "Contact Us — AI Video Generation Support | WanAI.cloud",
+      "description": "Contact the WanAI.cloud team for AI video generation support, feedback and business cooperation. Reach out today and start creating better videos.",
+      "keywords": "contact WanAI.cloud, AI video generation support, contact us"
+    },
+    "zh": {
+      "title": "联系我们 — AI 视频生成支持 | WanAI.cloud",
+      "description": "联系 WanAI.cloud 团队，获取 AI 视频生成支持、产品反馈与商务合作。今天就联系我们，创作更好的视频。",
+      "keywords": "联系 WanAI.cloud, AI 视频生成支持, 联系我们"
+    }
+  },
+  "privacy": {
+    "path": "/privacy",
+    "en": {
+      "title": "Privacy Policy — AI Video Platform | WanAI.cloud",
+      "description": "Read the WanAI.cloud privacy policy to learn how your personal information and content are collected, used and protected on the AI video platform.",
+      "keywords": "privacy policy, WanAI.cloud, AI video generation, data protection"
+    },
+    "zh": {
+      "title": "隐私协议 — AI 视频平台 | WanAI.cloud",
+      "description": "阅读 WanAI.cloud 隐私协议，了解你的个人信息和创作内容如何在 AI 视频平台上被收集、使用与保护。",
+      "keywords": "隐私协议, WanAI.cloud, AI 视频生成, 数据保护"
+    }
+  },
+  "terms": {
+    "path": "/terms",
+    "en": {
+      "title": "Terms of Service — AI Video Platform | WanAI.cloud",
+      "description": "Read the WanAI.cloud terms of service for using the AI video platform, including text to video, image to video and reference to video.",
+      "keywords": "terms of service, user agreement, WanAI.cloud, AI video generation"
+    },
+    "zh": {
+      "title": "服务协议 — AI 视频平台 | WanAI.cloud",
+      "description": "阅读 WanAI.cloud 服务协议，了解使用 AI 视频生成平台（含文生视频、图生视频与参考生视频）需遵守的规则。",
+      "keywords": "服务协议, 用户协议, WanAI.cloud, AI 视频生成"
+    }
+  },
+  "wan-3.0": {
+    "path": "/wan3-ai-video-generator",
+    "en": {
+      "title": "Wan 3.0 AI Video Generator — Free Online Text, Image & Reference to Video | WanAI.cloud",
+      "description": "Generate wan 3.0 AI video free online. WanAI.cloud's wan 3.0 AI video generator turns text, image and reference into 30s videos — free, no watermark. Start now.",
+      "keywords": "wan 3.0 AI video, wan 3.0 AI video generator, wan 3.0 AI video generator free online, wan 3.0 image to video, wan 3.0 reference to video, wan 3.0 30s video generator, AI video generator, image to video, text to video"
+    },
+    "zh": {
+      "title": "Wan 3.0 AI 视频生成器 — 免费在线文字、图片与参考生视频 | WanAI.cloud",
+      "description": "免费在线生成 Wan 3.0 AI 视频。WanAI.cloud 的 Wan 3.0 AI 视频生成器把文字、图片和参考素材变成 30 秒视频——免费、无水印。立即开始。",
+      "keywords": "Wan 3.0 AI 视频, Wan 3.0 AI 视频生成器, Wan 3.0 AI 视频生成器免费在线, Wan 3.0 图生视频, Wan 3.0 参考生视频, Wan 3.0 30 秒视频生成器, AI 视频生成器, 图生视频, 文生视频"
+    }
+  },
+  "minimax-h3": {
+    "path": "/minimaxh3-ai-video-generator",
+    "en": {
+      "title": "MiniMax H3 Video Generator — Free Online Text, Image & Reference to Video | WanAI.cloud",
+      "description": "Generate MiniMax H3 video free online. WanAI.cloud's MiniMax H3 video generator turns text, image and reference into cinematic video — free, no watermark. Start now.",
+      "keywords": "minimax h3, minimax h3 video, minimax h3 video generator, minimax h3 image to video, minimax h3 reference to video, minimax h3 prompt guide, minimax h3 api, minimax h3 video generation, AI video generator"
+    },
+    "zh": {
+      "title": "MiniMax H3 视频生成器 — 免费在线文字、图片与参考生视频 | WanAI.cloud",
+      "description": "免费在线生成 MiniMax H3 视频。WanAI.cloud 的 MiniMax H3 视频生成器把文字、图片和参考素材变成电影级视频——免费、无水印。立即开始。",
+      "keywords": "minimax h3, minimax h3 视频, minimax h3 视频生成器, minimax h3 图生视频, minimax h3 参考生视频, minimax h3 提示词, minimax h3 api, minimax h3 视频生成, AI 视频生成器"
+    }
+  }
+}
