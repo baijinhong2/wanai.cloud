@@ -34,6 +34,9 @@ interface VideoResult {
 const POLL_INTERVAL_MS = 4000;
 const POLL_MAX_TIMES = 180;
 
+// 全局：同时只允许播放一个生成结果视频（播放新视频时自动暂停上一个）
+let playingVideo: HTMLVideoElement | null = null;
+
 interface Props { mode: GenMode; onModeChange?: (m: GenMode) => void; showHeader?: boolean; defaultModel?: ModelId; }
 
 // ── 主组件 ──────────────────────────────────────────────────────────────
@@ -791,7 +794,7 @@ function ResultItem({ result, onRetry, onDelete }: { result: VideoResult; onRetr
       <div className="gen-item-player" style={{ aspectRatio: "4 / 3" }}>
         {isGenerating && <div className="gen-item-loading"><div className="gen-spinner" /><span>{t("gen.generatingVideo")}</span></div>}
         {isError && <div className="gen-item-error"><Icon name="alert" /><span>{t("gen.generateFailed")}</span></div>}
-        {isSuccess && result.videoUrl && <VideoPlayer src={result.videoUrl} downloadName={`ai-video-${result.id}.mp4`} />}
+        {isSuccess && result.videoUrl && <VideoPlayer src={result.videoUrl} />}
       </div>
       <div className="gen-item-foot">
         <div className="gen-item-config">
@@ -814,11 +817,23 @@ function ResultItem({ result, onRetry, onDelete }: { result: VideoResult; onRetr
 }
 
 // ── 视频播放器 ──────────────────────────────────────────────────────────
-function VideoPlayer({ src, downloadName }: { src: string; downloadName: string }) {
+function VideoPlayer({ src }: { src: string }) {
   return (
     <div className="gen-video">
-      <video src={src} playsInline preload="metadata" controls />
-      <span className="gen-video-name">{downloadName}</span>
+      <video
+        src={src}
+        playsInline
+        preload="metadata"
+        controls
+        onPlay={(e) => {
+          const v = e.currentTarget;
+          if (playingVideo && playingVideo !== v) playingVideo.pause();
+          playingVideo = v;
+        }}
+        onPause={(e) => {
+          if (playingVideo === e.currentTarget) playingVideo = null;
+        }}
+      />
     </div>
   );
 }
