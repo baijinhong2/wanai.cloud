@@ -68,9 +68,10 @@ export async function POST(req: Request) {
     }
 
     // 5. 落任务历史
+    const assetsJson = files.length > 0 ? JSON.stringify(files.map((f: { kind: string; name?: string }) => ({ kind: f.kind, name: f.name || null }))) : null;
     const taskRes = await query(
-      "insert into wanai_generation_tasks (user_id, external_task_id, model, mode, sub_mode, prompt, resolution, duration, ratio, status, credits_cost) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,'queued',$10) returning id",
-      [uid, externalTaskId, modelId, body.genMode || body.mode || null, body.subMode || null, body.prompt || null, body.resolution || null, body.duration || null, body.ratio || null, creditsCost]
+      "insert into wanai_generation_tasks (user_id, external_task_id, model, mode, sub_mode, prompt, resolution, duration, ratio, status, credits_cost, assets) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,'queued',$10,$11) returning id",
+      [uid, externalTaskId, modelId, body.genMode || body.mode || null, body.subMode || null, body.prompt || null, body.resolution || null, body.duration || null, body.ratio || null, creditsCost, assetsJson]
     );
     const dbTaskId = taskRes.rows[0].id;
 

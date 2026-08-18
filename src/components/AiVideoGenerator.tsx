@@ -23,7 +23,7 @@ interface VideoResult {
   error?: string;
   mode: GenMode;
   subMode?: SubMode;
-  model: ModelId;
+  model?: ModelId;
   resolution: Resolution;
   duration: number;
   ratio: Ratio;
@@ -93,12 +93,14 @@ export default function AiVideoGenerator({ mode, onModeChange, showHeader = true
             error: t.error || undefined,
             mode: (["text-to-video", "image-to-video", "reference-to-video"].includes(t.mode) ? t.mode : "text-to-video") as GenMode,
             subMode: (t.sub_mode === "firstLastFrame" || t.sub_mode === "firstFrame" ? t.sub_mode : undefined) as SubMode | undefined,
-            model: (["minimax-h3", "wan-3.0", "seedance-2.5"].includes(t.model) ? t.model : "minimax-h3") as ModelId,
+            model: (["minimax-h3", "wan-3.0", "seedance-2.5"].includes(t.model) ? t.model : undefined) as ModelId | undefined,
             resolution: t.resolution as Resolution,
             duration: Number(t.duration) || 0,
             ratio: t.ratio as Ratio,
             prompt: t.prompt || "",
-            assets: [],
+            assets: (Array.isArray(t.assets)
+              ? t.assets.map((a: any) => ({ kind: (a.kind === "video" || a.kind === "audio" || a.kind === "image" ? a.kind : "image") as AssetKind, name: a.name || "" }))
+              : []),
           }));
         if (restored.length > 0) setResults((prev) => [...restored, ...prev]);
       })
@@ -786,14 +788,14 @@ function ResultItem({ result, onRetry, onDelete }: { result: VideoResult; onRetr
         )}
         <p className="gen-item-prompt" title={result.prompt}>{result.prompt}</p>
       </div>
-      <div className="gen-item-player" style={{ aspectRatio: result.ratio === "auto" ? "16 / 9" : result.ratio.replace(":", " / ") }}>
+      <div className="gen-item-player" style={{ aspectRatio: "4 / 3" }}>
         {isGenerating && <div className="gen-item-loading"><div className="gen-spinner" /><span>{t("gen.generatingVideo")}</span></div>}
         {isError && <div className="gen-item-error"><Icon name="alert" /><span>{t("gen.generateFailed")}</span></div>}
         {isSuccess && result.videoUrl && <VideoPlayer src={result.videoUrl} downloadName={`ai-video-${result.id}.mp4`} />}
       </div>
       <div className="gen-item-foot">
         <div className="gen-item-config">
-          <span className="gen-config-pill">{getModel(result.model).name}</span>
+          {result.model && <span className="gen-config-pill">{getModel(result.model).name}</span>}
           <span className="gen-config-pill">{result.resolution}</span>
           <span className="gen-config-pill">{result.duration}s</span>
           <span className="gen-config-pill">{result.ratio === "auto" ? t("gen.auto") : result.ratio}</span>
