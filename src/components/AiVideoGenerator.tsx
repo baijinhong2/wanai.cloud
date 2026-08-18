@@ -23,6 +23,7 @@ interface VideoResult {
   error?: string;
   mode: GenMode;
   subMode?: SubMode;
+  model: ModelId;
   resolution: Resolution;
   duration: number;
   ratio: Ratio;
@@ -92,6 +93,7 @@ export default function AiVideoGenerator({ mode, onModeChange, showHeader = true
             error: t.error || undefined,
             mode: (["text-to-video", "image-to-video", "reference-to-video"].includes(t.mode) ? t.mode : "text-to-video") as GenMode,
             subMode: (t.sub_mode === "firstLastFrame" || t.sub_mode === "firstFrame" ? t.sub_mode : undefined) as SubMode | undefined,
+            model: (["minimax-h3", "wan-3.0", "seedance-2.5"].includes(t.model) ? t.model : "minimax-h3") as ModelId,
             resolution: t.resolution as Resolution,
             duration: Number(t.duration) || 0,
             ratio: t.ratio as Ratio,
@@ -425,7 +427,7 @@ export default function AiVideoGenerator({ mode, onModeChange, showHeader = true
     setError(null);
     const localId = `task-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     setResults((prev) => [
-      { id: localId, status: "generating", mode: currentMode, subMode: currentMode === "image-to-video" ? subMode : undefined, resolution, duration, ratio, prompt, assets: buildSubmittedAssets() },
+      { id: localId, status: "generating", mode: currentMode, subMode: currentMode === "image-to-video" ? subMode : undefined, model, resolution, duration, ratio, prompt, assets: buildSubmittedAssets() },
       ...prev,
     ]);
     setSubmitting(true);
@@ -791,6 +793,7 @@ function ResultItem({ result, onRetry, onDelete }: { result: VideoResult; onRetr
       </div>
       <div className="gen-item-foot">
         <div className="gen-item-config">
+          <span className="gen-config-pill">{getModel(result.model).name}</span>
           <span className="gen-config-pill">{result.resolution}</span>
           <span className="gen-config-pill">{result.duration}s</span>
           <span className="gen-config-pill">{result.ratio === "auto" ? t("gen.auto") : result.ratio}</span>

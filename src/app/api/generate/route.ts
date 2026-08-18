@@ -69,8 +69,8 @@ export async function POST(req: Request) {
 
     // 5. 落任务历史
     const taskRes = await query(
-      "insert into wanai_generation_tasks (user_id, external_task_id, mode, sub_mode, prompt, resolution, duration, ratio, status, credits_cost) values ($1,$2,$3,$4,$5,$6,$7,$8,'queued',$9) returning id",
-      [uid, externalTaskId, body.genMode || body.mode || null, body.subMode || null, body.prompt || null, body.resolution || null, body.duration || null, body.ratio || null, creditsCost]
+      "insert into wanai_generation_tasks (user_id, external_task_id, model, mode, sub_mode, prompt, resolution, duration, ratio, status, credits_cost) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,'queued',$10) returning id",
+      [uid, externalTaskId, modelId, body.genMode || body.mode || null, body.subMode || null, body.prompt || null, body.resolution || null, body.duration || null, body.ratio || null, creditsCost]
     );
     const dbTaskId = taskRes.rows[0].id;
 

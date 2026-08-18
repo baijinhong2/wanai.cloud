@@ -305,9 +305,10 @@ img { max-width: 100%; }
 .gen { display: flex; flex-direction: column; gap: 20px; padding: 4px; }
 .gen-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: stretch; }
 .gen-config, .gen-output { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.gen-config { align-self: start; }
 .gen-config-head { display: flex; align-items: center; padding: 0 4px; }
 .gen-config-title { font-size: 16px; margin: 0; font-weight: 700; color: var(--text); }
-.gen-output { position: sticky; top: 88px; align-self: start; }
+.gen-output { position: sticky; top: 88px; align-self: start; max-height: calc(100vh - 120px); max-height: calc(100dvh - 120px); overflow-y: auto; padding-right: 4px; scrollbar-width: thin; }
 
 /* 工具页：生成器整体复用主页功能区的卡片样式 */
 .tool-main .gen {
