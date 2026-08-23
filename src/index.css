@@ -600,6 +600,14 @@ img { max-width: 100%; }
 .footer-links { display: flex; gap: 16px; }
 .footer-links a { color: var(--text-faint); }
 
+/* Buildlist 徽章（页脚最底部） */
+.site-footer-buildlist {
+  border-top: 1px solid var(--border-soft);
+  display: flex; justify-content: center; padding: 14px 16px;
+}
+.site-footer-buildlist img { height: 40px; width: auto; opacity: .9; }
+.site-footer-buildlist a:hover img { opacity: 1; }
+
 /* ── 移动端底部菜单 ─────────────────────────────────────────────────── */
 .mobile-tabbar {
   width: 100%; box-sizing: border-box; flex-shrink: 0;

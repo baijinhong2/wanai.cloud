@@ -141,6 +141,11 @@ export function Footer() {
           <Link href="/terms">{t("footer.terms")}</Link>
         </span>
       </div>
+      <div className="site-footer-buildlist">
+        <a href="https://buildlist.io" target="_blank" rel="noopener">
+          <img src="https://buildlist.io/badge.svg" alt="Featured on Buildlist" style={{ height: 40, width: "auto" }} />
+        </a>
+      </div>
     </footer>
   );
 }
