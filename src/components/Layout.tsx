@@ -139,6 +139,7 @@ export function Footer() {
         <span className="footer-links">
           <Link href="/privacy">{t("footer.privacy")}</Link>
           <Link href="/terms">{t("footer.terms")}</Link>
+          <Link href="/refund">{t("footer.refund")}</Link>
         </span>
       </div>
       <div className="site-footer-buildlist">

@@ -42,7 +42,25 @@ export default function PrivacyPage() {
         <p>{t("privacy.s7.body")}</p>
 
         <h2>{t("privacy.s8.title")}</h2>
-        <p>{t("privacy.s8.body")} <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+        <p>{t("privacy.s8.body")}</p>
+
+        <h2>{t("privacy.s9.title")}</h2>
+        <p>{t("privacy.s9.body")}</p>
+
+        <h2>{t("privacy.s10.title")}</h2>
+        <p>{t("privacy.s10.body")}</p>
+
+        <h2>{t("privacy.s11.title")}</h2>
+        <p>{t("privacy.s11.body")}</p>
+
+        <h2>{t("privacy.s12.title")}</h2>
+        <p>{t("privacy.s12.body")}</p>
+
+        <h2>{t("privacy.s13.title")}</h2>
+        <p>{t("privacy.s13.body")}</p>
+
+        <h2>{t("privacy.s14.title")}</h2>
+        <p>{t("privacy.s14.body")} <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
       </div>
     </main>
   );

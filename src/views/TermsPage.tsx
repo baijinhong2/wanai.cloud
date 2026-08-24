@@ -19,11 +19,6 @@ export default function TermsPage() {
 
         <h2>{t("terms.s3.title")}</h2>
         <p>{t("terms.s3.body")}</p>
-        <ul>
-          <li>{t("terms.s3.l1")}</li>
-          <li>{t("terms.s3.l2")}</li>
-          <li>{t("terms.s3.l3")}</li>
-        </ul>
 
         <h2>{t("terms.s4.title")}</h2>
         <p>{t("terms.s4.body")}</p>
@@ -32,13 +27,37 @@ export default function TermsPage() {
         <p>{t("terms.s5.body")}</p>
 
         <h2>{t("terms.s6.title")}</h2>
-        <p>{t("terms.s6.body")}</p>
+        <p>{t("terms.s6.body", { refundUrl: "/refund" })}</p>
 
         <h2>{t("terms.s7.title")}</h2>
         <p>{t("terms.s7.body")}</p>
 
         <h2>{t("terms.s8.title")}</h2>
-        <p>{t("terms.s8.body")} <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+        <p>{t("terms.s8.body")}</p>
+
+        <h2>{t("terms.s9.title")}</h2>
+        <p>{t("terms.s9.body")}</p>
+
+        <h2>{t("terms.s10.title")}</h2>
+        <p>{t("terms.s10.body")}</p>
+
+        <h2>{t("terms.s11.title")}</h2>
+        <p>{t("terms.s11.body")}</p>
+
+        <h2>{t("terms.s12.title")}</h2>
+        <p>{t("terms.s12.body")}</p>
+
+        <h2>{t("terms.s13.title")}</h2>
+        <p>{t("terms.s13.body")}</p>
+
+        <h2>{t("terms.s14.title")}</h2>
+        <p>{t("terms.s14.body")}</p>
+
+        <h2>{t("terms.s15.title")}</h2>
+        <p>{t("terms.s15.body")}</p>
+
+        <h2>{t("terms.s16.title")}</h2>
+        <p>{t("terms.s16.body")} <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
       </div>
     </main>
   );

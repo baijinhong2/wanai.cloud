@@ -83,7 +83,18 @@ export default function PricingPage() {
             </button>
             <h3 className="auth-modal-title">{t("pricing.paymentComingSoon")}</h3>
             <p className="auth-modal-sub">{t("pricing.paymentSub")}</p>
-            <p className="pricing-buy-note">{t("pricing.buyNote").replace("{plan}", buyPlan.name)}</p>
+
+            <div className="pricing-modal-product">
+              <div className="pricing-modal-row">
+                <span className="pricing-modal-product-name">{t("pricing.modalProduct").replace("{plan}", buyPlan.name)}</span>
+              </div>
+              <div className="pricing-modal-row pricing-modal-meta">
+                <span>{t("pricing.modalPrice").replace("{price}", buyPlan.price.toFixed(2))}</span>
+                <span>{t("pricing.modalCredits").replace("{credits}", String(buyPlan.credits))}</span>
+              </div>
+            </div>
+
+            <p className="pricing-buy-note">{t("pricing.modalComingSoon")}</p>
             <a className="pricing-buy-email" href={`mailto:${SITE.email}`}>{SITE.email}</a>
           </div>
         </div>

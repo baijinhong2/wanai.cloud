@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useI18n } from "../lib/i18n";
 import { SAMPLE_VIDEOS, modelName, shuffle, type SampleVideo } from "../lib/samples";
 
@@ -28,18 +29,21 @@ function useColumnCount() {
   return count;
 }
 
-function VideoCard({ item }: { item: SampleVideo }) {
+function VideoCard({ item, onOpen }: { item: SampleVideo; onOpen: (item: SampleVideo) => void }) {
   const ref = useRef<HTMLVideoElement | null>(null);
   return (
-    <div
-      className="explore-card"
+    <button
+      type="button"
+      className="explore-card explore-card-btn"
+      onClick={() => onOpen(item)}
       onMouseEnter={() => { ref.current?.play().catch(() => {}); }}
       onMouseLeave={() => { const v = ref.current; if (v) { v.pause(); v.currentTime = 0; } }}
+      aria-label={`${modelName(item.model)} · ${item.id}`}
     >
       <video ref={ref} src={item.src} muted loop playsInline preload="metadata" />
       <div className="explore-card-overlay" />
       <span className="model-pill">{modelName(item.model)}</span>
-    </div>
+    </button>
   );
 }
 
@@ -51,6 +55,21 @@ export default function ExplorePage() {
     setItems(shuffle(SAMPLE_VIDEOS));
   }, []);
   const columns = splitColumns(items, useColumnCount());
+
+  const [active, setActive] = useState<SampleVideo | null>(null);
+
+  // Esc 关闭弹窗 + 打开时锁定背景滚动
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setActive(null); };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [active]);
 
   return (
     <main className="tool-main">
@@ -64,12 +83,33 @@ export default function ExplorePage() {
           {columns.map((col, i) => (
             <div className="explore-col" key={i}>
               {col.map((item) => (
-                <VideoCard key={item.id} item={item} />
+                <VideoCard key={item.id} item={item} onOpen={setActive} />
               ))}
             </div>
           ))}
         </div>
       </section>
+
+      {active && (
+        <div className="explore-modal-backdrop" onClick={() => setActive(null)}>
+          <div className="explore-modal" role="dialog" aria-modal="true" aria-label={modelName(active.model)} onClick={(e) => e.stopPropagation()}>
+            <button type="button" className="explore-modal-close" onClick={() => setActive(null)} aria-label={t("gen.close")}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+            </button>
+            <div className="explore-modal-media">
+              <video src={active.src} controls autoPlay playsInline />
+              <span className="model-pill">{modelName(active.model)}</span>
+            </div>
+            <div className="explore-modal-foot">
+              <p className="explore-modal-hint">{t("explore.sameStyleHint")}</p>
+              <Link href={`/image-to-video?model=${active.model}`} className="explore-modal-cta" onClick={() => setActive(null)}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                {t("explore.sameStyle")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

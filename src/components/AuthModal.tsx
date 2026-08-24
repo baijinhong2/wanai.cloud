@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
 import { useAuth } from "../lib/auth";
 import { useI18n } from "../lib/i18n";
 import SlideCaptcha from "./SlideCaptcha";
@@ -14,14 +15,16 @@ export default function AuthModal() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [agreed, setAgreed] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  // 打开弹窗或切换登录/注册时：重置验证码、确认密码与错误提示
+  // 打开弹窗或切换登录/注册时：重置验证码、确认密码、勾选状态与错误提示
   useEffect(() => {
     if (!authOpen) return;
     setCaptchaVerified(false);
     setConfirmPassword("");
+    setAgreed(false);
     setError(null);
   }, [authOpen, authMode]);
 
@@ -48,6 +51,10 @@ export default function AuthModal() {
     }
     if (!captchaVerified) {
       setError(t("auth.captchaRequired"));
+      return;
+    }
+    if (!isLogin && !agreed) {
+      setError(t("auth.agreeRequired"));
       return;
     }
 
@@ -105,6 +112,17 @@ export default function AuthModal() {
             </label>
           )}
           <SlideCaptcha key={authMode} onChange={setCaptchaVerified} />
+          {!isLogin && (
+            <label className="auth-agree">
+              <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} aria-required="true" />
+              <span>
+                {t("auth.agreePrefix")}{" "}
+                <Link href="/terms" target="_blank" rel="noopener noreferrer">{t("auth.agreeTerms")}</Link>
+                {" "}{t("auth.agreeAnd")}{" "}
+                <Link href="/privacy" target="_blank" rel="noopener noreferrer">{t("auth.agreePrivacy")}</Link>
+              </span>
+            </label>
+          )}
           {error && <p className="auth-error">{error}</p>}
           <button type="submit" className="auth-submit" disabled={submitting}>
             {submitting ? t("auth.submitting") : isLogin ? t("auth.login") : t("auth.register")}

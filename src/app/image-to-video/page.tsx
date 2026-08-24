@@ -9,14 +9,14 @@ const content = SEO_CONTENT[KEY];
 
 export const metadata: Metadata = toolMetadata(KEY);
 
-export default function Page() {
+export default function Page({ searchParams }: { searchParams?: { model?: string } }) {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd(KEY, APP_NAME, content)) }}
       />
-      <ImageToVideoPage />
+      <ImageToVideoPage modelParam={searchParams?.model} />
     </>
   );
 }

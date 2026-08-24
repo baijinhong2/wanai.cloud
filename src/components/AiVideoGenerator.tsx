@@ -566,8 +566,8 @@ export default function AiVideoGenerator({ mode, onModeChange, showHeader = true
             <div className="gen-char-count">{prompt.length} / {currentModel.promptMaxLength}</div>
           </div>
 
-          {/* 参数 + 生成按钮（固定在底部，间距紧凑） */}
-          <div className="gen-actions">
+          {/* 底部操作栏：参数选择 + 生成按钮 + 错误提示（sticky 始终在视口底部可见） */}
+          <div className="gen-bottom">
             <ParamsDropdown
               model={currentModel}
               resolution={resolution} duration={duration} ratio={ratio} ratioLocked={tab === "image-to-video"}
@@ -577,8 +577,8 @@ export default function AiVideoGenerator({ mode, onModeChange, showHeader = true
               <Icon name="sparkles" />
               <span>{t("gen.generate")} · {calcCredits()} {t("gen.credits")}</span>
             </button>
+            {error && <p className="gen-error">{error}</p>}
           </div>
-          {error && <p className="gen-error">{error}</p>}
         </div>
 
         {/* 右：结果 / Sample */}

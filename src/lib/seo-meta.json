@@ -167,5 +167,18 @@
       "description": "免费在线生成 MiniMax H3 视频。WanAI.cloud 的 MiniMax H3 视频生成器把文字、图片和参考素材变成电影级视频——免费、无水印。立即开始。",
       "keywords": "minimax h3, minimax h3 视频, minimax h3 视频生成器, minimax h3 图生视频, minimax h3 参考生视频, minimax h3 提示词, minimax h3 api, minimax h3 视频生成, AI 视频生成器"
     }
+  },
+  "refund": {
+    "path": "/refund",
+    "en": {
+      "title": "Refund Policy — WanAI.cloud",
+      "description": "Read the WanAI.cloud refund policy for AI video generation credits and digital services, including refund requests and how refunds are issued.",
+      "keywords": "refund policy, refund, WanAI.cloud, AI video generation credits"
+    },
+    "zh": {
+      "title": "退款政策 — WanAI.cloud",
+      "description": "了解 WanAI.cloud 的退款政策：AI 视频生成积分与数字服务的退款规则、退款申请方式及退款处理方式。",
+      "keywords": "退款政策, 退款, WanAI.cloud, AI 视频生成积分"
+    }
   }
 }

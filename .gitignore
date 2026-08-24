@@ -7,3 +7,7 @@ npm-debug.log*
 *.local
 server/data/
 *.tsbuildinfo
+
+# Next.js 备份缓存（误移出的编译缓存）
+.next_bak_*/
+.next_dev_bak_*/
