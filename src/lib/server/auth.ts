@@ -37,16 +37,32 @@ function normalizeEmail(email: string) {
   return String(email || "").trim().toLowerCase();
 }
 
-export async function register(email: string, password: string) {
+export async function register(email: string, password: string, code?: string) {
   const e = normalizeEmail(email);
   if (!EMAIL_RE.test(e)) return { error: "请输入有效的邮箱地址" };
   if (!password || String(password).length < 6) return { error: "密码至少 6 位" };
+  if (!code || !/^\d{6}$/.test(String(code).trim())) {
+    return { error: "请输入 6 位邮箱验证码" };
+  }
 
   const salt = crypto.randomBytes(16).toString("hex");
   const hash = hashPassword(password, salt);
   const nickname = e.split("@")[0];
 
   try {
+    // 校验邮箱验证码：取该邮箱最新一条未使用的记录，验证码一致且未过期
+    const v = await query(
+      "select id, code, expires_at from wanai_verify_codes where email = $1 and used = false order by created_at desc limit 1",
+      [e]
+    );
+    const row = v.rows[0] as any;
+    if (!row) return { error: "请先获取邮箱验证码" };
+    if (String(row.code) !== String(code).trim()) return { error: "验证码不正确，请重新输入" };
+    if (new Date(row.expires_at).getTime() < Date.now()) return { error: "验证码已过期，请重新获取" };
+
+    // 标记该验证码已使用，防止重放
+    await query("update wanai_verify_codes set used = true where id = $1", [row.id]);
+
     const ins = await query(
       "insert into wanai_users (email, password_salt, password_hash, nickname) values ($1,$2,$3,$4) returning id",
       [e, salt, hash, nickname]

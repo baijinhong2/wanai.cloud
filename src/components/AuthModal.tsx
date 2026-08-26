@@ -1,36 +1,61 @@
 "use client";
 
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "../lib/auth";
 import { useI18n } from "../lib/i18n";
-import SlideCaptcha from "./SlideCaptcha";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const CODE_RE = /^\d{6}$/;
 
 export default function AuthModal() {
-  const { authOpen, authMode, closeAuth, openAuth, login, register } = useAuth();
+  const { authOpen, authMode, closeAuth, openAuth, login, register, sendCode } = useAuth();
   const { t } = useI18n();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [code, setCode] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // 打开弹窗或切换登录/注册时：重置验证码、确认密码、勾选状态与错误提示
   useEffect(() => {
     if (!authOpen) return;
-    setCaptchaVerified(false);
     setConfirmPassword("");
+    setCode("");
     setAgreed(false);
     setError(null);
+    if (timerRef.current) clearInterval(timerRef.current);
+    setCooldown(0);
   }, [authOpen, authMode]);
+
+  useEffect(() => () => { if (timerRef.current) clearInterval(timerRef.current); }, []);
 
   if (!authOpen) return null;
 
   const isLogin = authMode === "login";
+
+  async function handleSendCode() {
+    if (cooldown > 0 || sending) return;
+    const em = email.trim();
+    if (!EMAIL_RE.test(em)) { setError(t("auth.emailInvalid")); return; }
+    setSending(true);
+    setError(null);
+    const err = await sendCode(em);
+    setSending(false);
+    if (err) { setError(err); return; }
+    setCooldown(60);
+    timerRef.current = setInterval(() => {
+      setCooldown((c) => {
+        if (c <= 1) { if (timerRef.current) clearInterval(timerRef.current); return 0; }
+        return c - 1;
+      });
+    }, 1000);
+  }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -49,19 +74,23 @@ export default function AuthModal() {
       setError(t("auth.passwordMismatch"));
       return;
     }
-    if (!captchaVerified) {
-      setError(t("auth.captchaRequired"));
-      return;
-    }
     if (!isLogin && !agreed) {
       setError(t("auth.agreeRequired"));
       return;
     }
-
-    setSubmitting(true);
-    const err = isLogin ? await login(em, password) : await register(em, password);
-    setSubmitting(false);
-    if (err) setError(err);
+    if (!isLogin) {
+      const c = code.trim();
+      if (!CODE_RE.test(c)) { setError(t("auth.codeRequired")); return; }
+      setSubmitting(true);
+      const err = await register(em, password, c);
+      setSubmitting(false);
+      if (err) setError(err);
+    } else {
+      setSubmitting(true);
+      const err = await login(em, password);
+      setSubmitting(false);
+      if (err) setError(err);
+    }
   }
 
   return (
@@ -111,7 +140,30 @@ export default function AuthModal() {
               />
             </label>
           )}
-          <SlideCaptcha key={authMode} onChange={setCaptchaVerified} />
+          {!isLogin && (
+            <label className="auth-field">
+              <span>{t("auth.verifyCode")}</span>
+              <div className="auth-code-row">
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={6}
+                  value={code}
+                  onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
+                  placeholder={t("auth.placeholderCode")}
+                  autoComplete="one-time-code"
+                />
+                <button
+                  type="button"
+                  className="auth-code-btn"
+                  disabled={cooldown > 0 || sending}
+                  onClick={handleSendCode}
+                >
+                  {sending ? "…" : cooldown > 0 ? t("auth.codeCooldown").replace("{s}", String(cooldown)) : t("auth.sendCode")}
+                </button>
+              </div>
+            </label>
+          )}
           {!isLogin && (
             <label className="auth-agree">
               <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} aria-required="true" />

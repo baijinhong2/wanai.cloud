@@ -53,6 +53,15 @@ export const translations: TranslationMap = {
   "auth.agreeAnd": { en: "and", zh: "和" },
   "auth.agreePrivacy": { en: "Privacy Policy", zh: "《隐私协议》" },
   "auth.agreeRequired": { en: "Please agree to the Terms of Service and Privacy Policy before continuing", zh: "请先勾选并同意服务协议与隐私协议后再继续" },
+  "auth.verifyCode": { en: "Verification code", zh: "邮箱验证码" },
+  "auth.placeholderCode": { en: "6-digit code", zh: "请输入 6 位验证码" },
+  "auth.sendCode": { en: "Send code", zh: "发送验证码" },
+  "auth.resendCode": { en: "Resend", zh: "重新发送" },
+  "auth.codeSent": { en: "Code sent, please check your inbox", zh: "验证码已发送，请查收邮箱" },
+  "auth.codeCooldown": { en: "Resend in {s}s", zh: "{s}s 后重发" },
+  "auth.codeRequired": { en: "Please enter the verification code", zh: "请输入邮箱验证码" },
+  "auth.codeLength": { en: "Verification code must be 6 digits", zh: "验证码为 6 位数字" },
+  "auth.sendCodeSuccess": { en: "Verification code sent, please check your inbox (also check spam)", zh: "验证码已发送，请查收邮箱（垃圾箱也看看）" },
 
   // ── 价格页 ───────────────────────────────────
   "pricing.title": { en: "Simple, transparent pricing", zh: "简单透明的价格" },

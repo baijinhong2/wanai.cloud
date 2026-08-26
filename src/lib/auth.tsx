@@ -15,7 +15,8 @@ interface AuthContextValue {
   credits: number | null;
   refreshCredits: () => Promise<void>;
   login: (email: string, password: string) => Promise<string | null>;
-  register: (email: string, password: string) => Promise<string | null>;
+  register: (email: string, password: string, code?: string) => Promise<string | null>;
+  sendCode: (email: string) => Promise<string | null>;
   logout: () => Promise<void>;
   requireAuth: () => boolean;
   authOpen: boolean;
@@ -93,10 +94,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return null;
   }, [refreshCredits]);
 
-  const register = useCallback(async (email: string, password: string) => {
+  const register = useCallback(async (email: string, password: string, code?: string) => {
     const r = await authFetch("/api/register", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, code }),
     });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) return data.error || "注册失败";
@@ -106,6 +107,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     refreshCredits();
     return null;
   }, [refreshCredits]);
+
+  const sendCode = useCallback(async (email: string) => {
+    const r = await authFetch("/api/send-code", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) return data.error || "验证码发送失败";
+    return null;
+  }, []);
 
   const logout = useCallback(async () => {
     try { await authFetch("/api/logout", { method: "POST" }); } catch { /* ignore */ }
@@ -131,7 +142,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, loading, credits, refreshCredits, login, register, logout, requireAuth, authOpen, authMode, openAuth, closeAuth }}
+      value={{ user, loading, credits, refreshCredits, login, register, sendCode, logout, requireAuth, authOpen, authMode, openAuth, closeAuth }}
     >
       {children}
     </AuthContext.Provider>

@@ -740,6 +740,16 @@ img { max-width: 100%; }
 .auth-field input:focus { outline: none; border-color: var(--violet); }
 .auth-field input::placeholder { color: var(--text-faint); }
 .auth-error { color: var(--red); font-size: 13px; margin: 0 0 12px; }
+.auth-code-row { display: flex; gap: 8px; align-items: stretch; }
+.auth-code-row input { flex: 1; min-width: 0; }
+.auth-code-btn {
+  flex-shrink: 0; padding: 0 14px; border-radius: 11px; cursor: pointer;
+  background: linear-gradient(135deg, var(--violet), var(--indigo));
+  color: #fff; font-size: 13px; font-weight: 600; border: none;
+  transition: filter .15s, opacity .15s;
+}
+.auth-code-btn:hover:not(:disabled) { filter: brightness(1.08); }
+.auth-code-btn:disabled { opacity: .55; cursor: default; }
 .auth-agree { display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; color: var(--text-dim); line-height: 1.5; margin: 4px 0 10px; cursor: pointer; }
 .auth-agree input[type="checkbox"] { width: 15px; height: 15px; margin-top: 2px; accent-color: var(--violet); cursor: pointer; flex-shrink: 0; }
 .auth-agree a { color: var(--violet-soft); text-decoration: none; border-bottom: 1px solid rgba(139,92,246,.35); padding-bottom: 1px; }

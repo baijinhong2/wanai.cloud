@@ -53,17 +53,19 @@ export function Header({ variant = "full", onToggleMobileMenu }: { variant?: "fu
 
         <div className="header-auth">
           <LanguageSwitcher />
-          {variant === "app" && (user ? (
+          {user ? (
             <Link href="/pricing" className="header-premium-btn" title={t("profile.credits")} aria-label={t("profile.credits")}>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v10M9.2 9.6c0-1.1 1.3-1.8 2.8-1.8s2.8.7 2.8 1.8-1.3 1.8-2.8 1.8-2.8.7-2.8 1.8 1.3 1.8 2.8 1.8 2.8-.7 2.8-1.8" /></svg>
               <span>{credits ?? "…"}</span>
             </Link>
           ) : (
-            <Link href="/pricing" className="header-premium-btn header-upgrade-btn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7.5 7 12l5-6.5L17 12l4-4.5-1.6 11.5H4.6L3 7.5z" /></svg>
-              <span>{t("header.upgrade")}</span>
-            </Link>
-          ))}
+            variant === "app" && (
+              <Link href="/pricing" className="header-premium-btn header-upgrade-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7.5 7 12l5-6.5L17 12l4-4.5-1.6 11.5H4.6L3 7.5z" /></svg>
+                <span>{t("header.upgrade")}</span>
+              </Link>
+            )
+          )}
           {user ? (
             <div className="header-user" ref={userMenuRef}>
               <button type="button" className="header-avatar" onClick={() => setUserMenuOpen((v) => !v)} aria-label={t("nav.userMenu")}>
